@@ -1,7 +1,6 @@
-NAME = pushswap.a
+NAME = pushswap
 
-SRCS = \
-	pushswap.c
+SRCS = setup_rules.c print_nodes.c
 
 OBJ = $(SRCS:.c=.o)
 
@@ -20,23 +19,22 @@ LIBFT = $(LIBFT_DIR)/libft.a
 all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT)
-	$(AR) $(NAME) $(OBJ)
-	$(CC) $(CFLAGS) -o pushswap $(NAME) $(LIBFT)  
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LIBFT)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(LIBFT):
-	cd $(LIBFT_DIR) && $(MAKE)
+	@cd $(LIBFT_DIR) && $(MAKE)
+
 clean:
 	$(RM) $(OBJ)
-	cd $(LIBFT_DIR) && $(MAKE) clean
+	@cd $(LIBFT_DIR) && $(MAKE) clean
 
 fclean: clean
 	$(RM) $(NAME)
-	cd $(LIBFT_DIR) && $(MAKE) clean
-	
-re: fclean all
+	@cd $(LIBFT_DIR) && $(MAKE) fclean
 
+re: fclean all
 
 .PHONY: all clean fclean re
