@@ -1,6 +1,6 @@
 NAME = pushswap
 
-SRCS = setup_rules.c print_nodes.c
+SRCS =  firstpush.c
 
 OBJ = $(SRCS:.c=.o)
 
