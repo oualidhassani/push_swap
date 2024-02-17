@@ -46,9 +46,11 @@ void printstack(node_t *top)
     printf("\n");
 }
 
+
 int main(int ac, char **av)
 {
     int i = 1;
+    int j;
     if (ac < 2)
     {
         ft_printf("need more than 1 number\n");
@@ -60,9 +62,19 @@ int main(int ac, char **av)
     int element;
     while(i < ac)
     {
-        element = ft_atoi(av[i]);
-        push(&top, element);
-        i++;
+        char *arg = av[i];
+        char **tok = ft_split(arg, ' ');
+            j = 0;
+        if(tok != NULL)
+        {
+            while(tok[j] != NULL)
+            {
+                element = ft_atoi(tok[j]);
+                push(&top, element);
+                j++;
+            }
+        }
+            i++;
     }
     printstack(top);
 }
