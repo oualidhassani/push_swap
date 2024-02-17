@@ -9,7 +9,7 @@ typedef struct node {
     int val;
     struct node *next;
 } node_t;
-
+void printstack(node_t *top);
 // typedef struct stack{
 //     node_t *top;
 // }stack;

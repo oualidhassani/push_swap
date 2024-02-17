@@ -1,5 +1,16 @@
 #include "push_swap.h"
 
+
+void ft_free(char **str)
+{
+    int i = 0;
+    while(str[i])
+    {
+        free(str[i]);
+        i++;
+    }
+    free(str);
+}
 node_t *createnode(int a)
 {
     node_t * node;
@@ -46,20 +57,11 @@ void printstack(node_t *top)
     printf("\n");
 }
 
-
-int main(int ac, char **av)
+void splitingarguments(int ac, char **av, node_t **top)
 {
     int i = 1;
     int j;
-    if (ac < 2)
-    {
-        ft_printf("need more than 1 number\n");
-        exit(1);
-    }
-
-    node_t *top = NULL;
-
-    int element;
+     int element;
     while(i < ac)
     {
         char *arg = av[i];
@@ -70,11 +72,25 @@ int main(int ac, char **av)
             while(tok[j] != NULL)
             {
                 element = ft_atoi(tok[j]);
-                push(&top, element);
+                push(top, element);
                 j++;
             }
         }
+        ft_free(tok);
             i++;
     }
+}
+int main(int ac, char **av)
+{
+    if (ac < 2)
+    {
+        ft_printf("need more than 1 number\n");
+        exit(1);
+    }
+
+    node_t *top = NULL;
+
+    splitingarguments(ac, av, &top); 
+
     printstack(top);
 }
