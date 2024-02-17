@@ -1,4 +1,5 @@
 #include "push_swap.h"
+
 node_t *createnode(int a)
 {
     node_t * node;
@@ -15,19 +16,27 @@ node_t *createnode(int a)
     return(node);
 }
 
-void push(stack *s, int data)
+void push(node_t **top, int data)
 {
     node_t *newnode = createnode(data);
-    
-    newnode->next = s->top;
-    
-    s->top = newnode;
+
+    node_t *tmp = *top;
+
+      if (tmp == NULL)
+      {
+        *top = newnode;
+        return ;
+      }
+    while(tmp->next != NULL)
+        tmp = tmp->next;
+
+    tmp->next = newnode;
 
 }
 
-void printstack(stack *s)
+void printstack(node_t *top)
 {
-    node_t *pop = s->top;
+    node_t *pop = top;
 
     while(pop != NULL)
     {
@@ -40,21 +49,20 @@ void printstack(stack *s)
 int main(int ac, char **av)
 {
     int i = 1;
-    if (ac <= 2)
+    if (ac < 2)
     {
         ft_printf("need more than 1 number\n");
         exit(1);
     }
 
-    stack s;
-    s.top = NULL;
+    node_t *top = NULL;
 
     int element;
     while(i < ac)
     {
         element = ft_atoi(av[i]);
-        push(&s, element);
+        push(&top, element);
         i++;
     }
-    printstack(&s);
+    printstack(top);
 }

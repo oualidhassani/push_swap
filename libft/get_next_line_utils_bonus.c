@@ -70,7 +70,7 @@ char	*ft_substr1(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (NULL);
-	if (start < 0 || start >= ft_strlen(s))
+	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
 	if (len > ft_strlen(s) - start)
 		len = ft_strlen(s) - start;

@@ -10,8 +10,8 @@ typedef struct node {
     struct node *next;
 } node_t;
 
-typedef struct stack{
-    node_t *top;
-}stack;
+// typedef struct stack{
+//     node_t *top;
+// }stack;
 
 #endif

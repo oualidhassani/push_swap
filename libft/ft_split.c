@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 14:51:20 by ohassani          #+#    #+#             */
-/*   Updated: 2024/01/26 13:27:44 by ohassani         ###   ########.fr       */
+/*   Updated: 2024/02/16 13:53:10 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,10 +99,8 @@ static char	**loopsplit(const char *s, char c, size_t i, char **split)
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
-	size_t	j;
 
 	split = (char **)malloc((cal(s, c) + 1) * sizeof(char *));
-	j = 0;
 	if (split == NULL)
 		return (NULL);
 	return (loopsplit(s, c, 0, split));
