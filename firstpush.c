@@ -39,7 +39,7 @@ void push(node_t **top, int data)
         return ;  
       }
     while(tmp->next != NULL)
-        tmp = tmp->next; 
+        tmp = tmp->next;
 
     tmp->next = newnode;
 
