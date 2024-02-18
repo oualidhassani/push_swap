@@ -51,10 +51,9 @@ void printstack(node_t *top)
 
     while(pop != NULL)
     {
-        ft_printf("%d ", pop->val);
+        ft_printf("%d\n", pop->val);
         pop = pop->next;
     }
-    printf("\n");
 }
 
 void splitingarguments(int ac, char **av, node_t **top)
@@ -83,14 +82,11 @@ void splitingarguments(int ac, char **av, node_t **top)
 int main(int ac, char **av)
 {
     if (ac < 2)
-    {
-        ft_printf("need more than 1 number\n");
         exit(1);
-    }
 
     node_t *top = NULL;
 
     splitingarguments(ac, av, &top); 
-
+    sa(&top);
     printstack(top);
 }
