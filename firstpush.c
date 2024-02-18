@@ -87,6 +87,6 @@ int main(int ac, char **av)
     node_t *top = NULL;
 
     splitingarguments(ac, av, &top); 
-    sa(&top);
+    // sa(&top);
     printstack(top);
 }

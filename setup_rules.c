@@ -14,13 +14,13 @@ void sa(node_t **top)
 
 void sb(node_t **topb)
 {
-    if((*topb) == NULL || (*topb) ->next == NULL)
+    if((*topb) == NULL || (*topb)->next == NULL)
         return ;
     
     int tmpb;
 
     tmpb = (*topb)->val;
-    (*topb)->val == (*topb)->next->val;
+    (*topb)->val = (*topb)->next->val;
     (*topb)->next->val = tmpb;
 }
 
@@ -32,5 +32,10 @@ void ss(node_t **top, node_t **topb)
 
 void pa(node_t **top, node_t **topb)
 {
+    if((*topb) == NULL || (*topb)->next == NULL)
+        return ;
+
+    int remov = removedbeg(topb);
+
     
 }

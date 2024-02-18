@@ -12,9 +12,9 @@ typedef struct node {
 
 void printstack(node_t *top);
 void sa(node_t **top);
-
-// typedef struct stack{
-//     node_t *top;
-// }stack;
+int removedbeg(node_t **head);
+void sb(node_t **topb);
+void ss(node_t **top, node_t **topb);
+void pa(node_t **top, node_t **topb);
 
 #endif
