@@ -1,6 +1,6 @@
 NAME = pushswap
 
-SRCS =  firstpush.c setup_rules.c
+SRCS =  firstpush.c setup_rules.c utilsfunction.c
 
 OBJ = $(SRCS:.c=.o)
 
@@ -21,8 +21,8 @@ all: $(NAME)
 $(NAME): $(OBJ) $(LIBFT)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LIBFT)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+# %.o: %.c
+# 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(LIBFT):
 	@cd $(LIBFT_DIR) && $(MAKE)

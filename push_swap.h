@@ -16,5 +16,11 @@ int removedbeg(node_t **head);
 void sb(node_t **topb);
 void ss(node_t **top, node_t **topb);
 void pa(node_t **top, node_t **topb);
+void ft_free(char **str);
+node_t *createnode(int a);
+void push(node_t **top, int data);
+void printstack(node_t *top);
+void splitingarguments(int ac, char **av, node_t **top);
+void pb(node_t **top, node_t **topb);
 
 #endif

@@ -21,13 +21,7 @@ void sb(node_t **topb)
 
     tmpb = (*topb)->val;
     (*topb)->val = (*topb)->next->val;
-    (*topb)->next->val = tmpb;
-}
 
-void ss(node_t **top, node_t **topb)
-{
-    sa(top);
-    sb(topb);
 }
 
 void pa(node_t **top, node_t **topb)
@@ -36,6 +30,27 @@ void pa(node_t **top, node_t **topb)
         return ;
 
     int remov = removedbeg(topb);
+    node_t *topnow = createnode(remov);
 
+    topnow->next = *top;
+    *top = topnow;
+}
+
+void pb(node_t **top, node_t **topb)
+{
+     if((*top) == NULL || (*top)->next == NULL)
+        return ;
+
+    int remv = removedbeg(top);
+
+    node_t *topnnow = createnode(remv);
+
+    topnnow->next = *topb; 
+    *topb = topnnow;
+
+}
+
+void ra(node_t **top)
+{
     
 }

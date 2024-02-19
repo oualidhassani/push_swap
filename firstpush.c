@@ -79,14 +79,38 @@ void splitingarguments(int ac, char **av, node_t **top)
             i++;
     }
 }
+
 int main(int ac, char **av)
 {
     if (ac < 2)
         exit(1);
+    // (void)av;
 
     node_t *top = NULL;
-
-    splitingarguments(ac, av, &top); 
-    // sa(&top);
+//    node_t *topb = NULL;
+    splitingarguments(ac, av, &top);
     printstack(top);
+    // printf("%d",topb->val);
+    // sa(&top);
+    // push(&top, 10);
+    // push(&top, 20);
+    // push(&top, 30);
+    // push(&top, 40);
+    // push(&top, 50);
+
+    // push(&topb, 60);
+    // push(&topb, 70);
+    // push(&topb, 80);
+
+    // pa(&top, &topb);
+    // printstack(top);
+    // printf("\nB => \n\n");
+    // printstack(topb);
+
+    // printf("\n B after push => \n\n");
+    // printstack(topb);
+    // printf("\n A after push=> \n\n");
+    // printstack(top);
+
+
 }
