@@ -22,5 +22,6 @@ void push(node_t **top, int data);
 void printstack(node_t *top);
 void splitingarguments(int ac, char **av, node_t **top);
 void pb(node_t **top, node_t **topb);
-
+void ra(node_t **top);
+void rra(node_t **top);
 #endif
