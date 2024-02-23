@@ -24,4 +24,7 @@ void splitingarguments(int ac, char **av, node_t **top);
 void pb(node_t **top, node_t **topb);
 void ra(node_t **top);
 void rra(node_t **top);
+void ft_errors(int ac, char**av);
+void displayerrors(void);
+
 #endif

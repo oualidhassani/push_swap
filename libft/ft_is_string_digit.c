@@ -6,7 +6,7 @@
 /*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 10:02:27 by ohassani          #+#    #+#             */
-/*   Updated: 2024/02/21 10:21:27 by ohassani         ###   ########.fr       */
+/*   Updated: 2024/02/23 12:26:59 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	ft_is_string_digit(char *str)
 	int	i;
 
 	i = 0;
-	// if (str[0] == 0)
-	// 	return (0);
+	if (str[0] == '-' || str[0] == '+')
+		return (1); 
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
