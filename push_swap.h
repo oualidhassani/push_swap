@@ -26,5 +26,6 @@ void ra(node_t **top);
 void rra(node_t **top);
 void ft_errors(int ac, char**av);
 void displayerrors(void);
-
+void checkduplicate(int ac, char **av);
+int check_spase(char *str);
 #endif

@@ -15,9 +15,37 @@ void ft_errors(int ac, char **av)
     {
         if(av[i][0] == '\0')
             displayerrors();
-        if(ft_strcmp(av[i], av[j]) == 0)
-            displayerrors();
         i++;
-        j++;
+    }
+}
+
+int check_spase(char *str)
+{
+    int i = 0;
+
+    while (str[i] && str[i] != '\t')
+    {
+        if (str[i] != ' ')
+            return (0);
+        i++;
+    }
+    return (1);
+}
+
+void checkduplicate(int ac, char **av)
+{
+    int i = 1;
+    while(i < ac)
+    {
+        int j = 2;
+            int num = ft_atoi(av[i]);
+        while(j < ac)
+        {
+            int num1 = ft_atoi(av[j]);
+            if(num == num1)
+                displayerrors();
+            j++;
+        }
+        i++;
     }
 }

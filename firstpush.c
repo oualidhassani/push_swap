@@ -18,7 +18,7 @@ node_t *createnode(int a)
 
     if(node == NULL)
     {
-        ft_printf("fails allocation\n");
+        ft_printf("fails allocation");
         exit(EXIT_FAILURE);
     }
 
@@ -122,12 +122,19 @@ void splitingarguments(int ac, char **av, node_t **top)
 
 int main(int ac, char **av)
 {
+    int i =0;
+    if(ac < 2)
+        exit(1);
     node_t *top;
     top = NULL;
-
-    // if(ac < 2)
-    //     exit(EXIT_FAILURE);
+    while(i < ac)
+    {
+        if (check_spase(av[i]) == 1)
+            displayerrors();
+        i++;
+    }
     ft_errors(ac, av);
+    checkduplicate(ac, av);
     splitingarguments(ac, av, &top);
     printstack(top);
 }
