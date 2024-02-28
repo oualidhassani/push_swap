@@ -9,8 +9,8 @@ void ft_errors(int ac, char **av)
 {
     int i;
     i = 1;
-    int j;
-    j = 0 ;
+    // int j;
+    // j = 0 ;
     while (i < ac)
     {
         if(av[i][0] == '\0')
@@ -32,20 +32,15 @@ int check_spase(char *str)
     return (1);
 }
 
-void checkduplicate(int ac, char **av)
+int checkduplicate(node_t *a, int nbr)
 {
-    int i = 1;
-    while(i < ac)
+    if(a == NULL)
+        return(0);
+    while(a)
     {
-        int j = 2;
-            int num = ft_atoi(av[i]);
-        while(j < ac)
-        {
-            int num1 = ft_atoi(av[j]);
-            if(num == num1)
-                displayerrors();
-            j++;
-        }
-        i++;
+        if(a->val == nbr)
+            return(1);
+        a = a->next;
     }
+    return(0);
 }

@@ -1,6 +1,6 @@
 NAME = pushswap
 
-SRCS =  firstpush.c setup_rules.c utilsfunction.c parsing.c
+SRCS =  firstpush.c setup_rules.c utilsfunction.c parsing.c algo.c
 
 OBJ = $(SRCS:.c=.o)
 

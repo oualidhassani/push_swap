@@ -74,7 +74,7 @@ void splitingarguments(int ac, char **av, node_t **top)
             {
                 element = ft_atoi(tok[j]);
                 char *itoaresult = ft_itoa(element);
-                if(!ft_is_string_digit(tok[j])||ft_strcmp(tok[j], itoaresult) != 0)
+                if(!ft_is_string_digit(tok[j])||ft_strcmp(tok[j], itoaresult) != 0 || (checkduplicate(*top, ft_atoi(tok[j]))) == 1)
                     displayerrors();
                 push(top, element);
                 j++;
@@ -122,11 +122,11 @@ void splitingarguments(int ac, char **av, node_t **top)
 
 int main(int ac, char **av)
 {
-    int i =0;
+    int i = 1; 
     if(ac < 2)
         exit(1);
-    node_t *top;
-    top = NULL;
+    node_t *a;
+    a = NULL;
     while(i < ac)
     {
         if (check_spase(av[i]) == 1)
@@ -134,7 +134,12 @@ int main(int ac, char **av)
         i++;
     }
     ft_errors(ac, av);
-    checkduplicate(ac, av);
-    splitingarguments(ac, av, &top);
-    printstack(top);
+    splitingarguments(ac, av, &a);
+    if(mystackissorted(a) == 0)
+    {
+        if(stacklen(a) == 3)
+            sortthreenum(&a);
+        else if(stacklen(a) == 2)
+            sa(&a);
+    }
 }

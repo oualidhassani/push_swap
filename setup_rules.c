@@ -2,9 +2,10 @@
 
 void sa(node_t **top)
 {
+    write(1, "sa\n", 3);
     int tmp;
 
-    if((*top) == NULL || (*top)->next == NULL)
+    if((*top) == NULL)
         return ;
 
     tmp = (*top)->val;
@@ -14,19 +15,23 @@ void sa(node_t **top)
 
 void sb(node_t **topb)
 {
-    if((*topb) == NULL || (*topb)->next == NULL)
+        write(1, "sb\n", 3);
+
+    if((*topb) == NULL)
         return ;
     
     int tmpb;
 
     tmpb = (*topb)->val;
     (*topb)->val = (*topb)->next->val;
-
+    (*topb)->next->val = tmpb;
 }
 
 void pa(node_t **top, node_t **topb)
 {
-    if((*topb) == NULL || (*topb)->next == NULL)
+        write(1, "pa\n", 3);
+
+    if((*topb) == NULL)
         return ;
 
     int remov = removedbeg(topb);
@@ -38,7 +43,9 @@ void pa(node_t **top, node_t **topb)
 
 void pb(node_t **top, node_t **topb)
 {
-     if((*top) == NULL || (*top)->next == NULL)
+        write(1, "pb\n", 3);
+
+     if((*top) == NULL)
         return ;
 
     int remv = removedbeg(top);
@@ -52,7 +59,9 @@ void pb(node_t **top, node_t **topb)
 
 void ra(node_t **top)
 {
-    if((*top) == NULL || (*top)->next == NULL)
+        write(1, "ra\n", 3);
+
+    if((*top) == NULL)
         return ;
 
 
@@ -67,7 +76,9 @@ void ra(node_t **top)
 
 void rb(node_t **topb)
 {
-    if((*topb) == NULL || (*topb)->next == NULL)
+        write(1, "rb\n", 3);
+
+    if((*topb) == NULL)
         return ;
     
     node_t *tmp = *topb;
@@ -83,13 +94,16 @@ void rb(node_t **topb)
 
 void rr(node_t **top, node_t **topb)
 {
+        write(1, "rr\n", 3);
+
     ra(top);
     rb(topb);
 }
 
 void rra(node_t **top)
 {
-    if((*top) == NULL || (*top)->next == NULL)
+        write(1, "rra\n", 4);
+    if((*top) == NULL)
         return ;
     node_t *tmp = *top;
 
@@ -111,7 +125,9 @@ void rra(node_t **top)
 
 void rrb(node_t **topb)
 {
-    if((*topb) == NULL || (*topb)->next == NULL)
+        write(1, "rrb\n", 4);
+
+    if((*topb) == NULL)
         return ;
     node_t *tmp = *topb;
 
@@ -133,6 +149,8 @@ void rrb(node_t **topb)
 
 void rrr(node_t **top, node_t **topb)
 {
+        write(1, "rrr\n", 4);
+
     rra(top);
     rrb(topb);
 }
