@@ -82,4 +82,5 @@ char	*ft_substr1(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin1(char const *s1, char const *s2);
 char	*mybuffer1(int fd, char *accumulation, char *buffer);
 char	*linesub1(char *line_buffer);
+void displayerrors(void);
 #endif

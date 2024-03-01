@@ -32,4 +32,5 @@ void sortthreenum(node_t **a);
 node_t *findlargest(node_t *head);
 int stacklen(node_t *head);
 int checkduplicate(node_t *a, int nbr);
+void fourthnum(node_t **a);
 #endif

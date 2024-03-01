@@ -62,20 +62,23 @@ void splitingarguments(int ac, char **av, node_t **top)
 {
     int i = 1;
     int j;
-    int  element;
-    while(i < ac)
+    int element;
+    while (i < ac)
     {
         char *arg = av[i];
         char **tok = ft_split(arg, ' ');
-            j = 0;
-        if(tok != NULL)
+        j = 0;
+        if (tok != NULL)
         {
-            while(tok[j] != NULL)
+            while (tok[j] != NULL)
             {
                 element = ft_atoi(tok[j]);
                 char *itoaresult = ft_itoa(element);
-                if(!ft_is_string_digit(tok[j])||ft_strcmp(tok[j], itoaresult) != 0 || (checkduplicate(*top, ft_atoi(tok[j]))) == 1)
+                if ( checkduplicate(*top, ft_atoi(tok[j])) == 1 || !ft_is_string_digit(tok[j]) || ft_strcmp(tok[j], itoaresult) != 0)
+                {
                     displayerrors();
+                    break;
+                }
                 push(top, element);
                 j++;
             }
@@ -84,6 +87,7 @@ void splitingarguments(int ac, char **av, node_t **top)
         i++;
     }
 }
+
 
 // int main(int ac, char **av)
 // {
@@ -127,6 +131,8 @@ int main(int ac, char **av)
         exit(1);
     node_t *a;
     a = NULL;
+    // node_t *b;
+    // b = NULL;
     while(i < ac)
     {
         if (check_spase(av[i]) == 1)
@@ -141,5 +147,8 @@ int main(int ac, char **av)
             sortthreenum(&a);
         else if(stacklen(a) == 2)
             sa(&a);
+        // else if(stacklen(a) == 4)
+        //     fourthnum(&a);
     }
+    printstack(a);
 }
