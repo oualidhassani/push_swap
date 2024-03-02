@@ -7,6 +7,7 @@
 
 typedef struct node {
     int val;
+    int index;
     struct node *next;
 } node_t;
 
@@ -32,5 +33,9 @@ void sortthreenum(node_t **a);
 node_t *findlargest(node_t *head);
 int stacklen(node_t *head);
 int checkduplicate(node_t *a, int nbr);
-void fourthnum(node_t **a);
+void fourthnum(node_t **a, node_t *b);
+void asignindices(node_t *head);
+node_t *findsmallest(node_t *head);
+void fivefunction(node_t **a, node_t *b); 
+
 #endif

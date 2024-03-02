@@ -131,8 +131,8 @@ int main(int ac, char **av)
         exit(1);
     node_t *a;
     a = NULL;
-    // node_t *b;
-    // b = NULL;
+    node_t *b;
+    b = NULL;
     while(i < ac)
     {
         if (check_spase(av[i]) == 1)
@@ -141,14 +141,17 @@ int main(int ac, char **av)
     }
     ft_errors(ac, av);
     splitingarguments(ac, av, &a);
+    asignindices(a);
     if(mystackissorted(a) == 0)
     {
         if(stacklen(a) == 3)
             sortthreenum(&a);
         else if(stacklen(a) == 2)
             sa(&a);
-        // else if(stacklen(a) == 4)
-        //     fourthnum(&a);
+        else if(stacklen(a) == 4)
+            fourthnum(&a, b);
+        else if(stacklen(a) == 5)
+            fivefunction(&a, b);
     }
     printstack(a);
 }

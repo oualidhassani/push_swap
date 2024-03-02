@@ -57,7 +57,6 @@ void pb(node_t **top, node_t **topb)
 
 void ra(node_t **top)
 {
-    write(1, "ra\n", 3);
     if((*top) == NULL)
         return ;
 
@@ -69,6 +68,8 @@ void ra(node_t **top)
     int rmv = removedbeg(top);
 
     tmp->next = createnode(rmv);
+
+    write(1, "ra\n", 3);
 }
 
 void rb(node_t **topb)

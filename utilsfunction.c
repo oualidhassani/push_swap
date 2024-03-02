@@ -27,3 +27,15 @@ int stacklen(node_t *head)
     }
     return(counter);
 }
+
+void asignindices(node_t *head)
+{
+    int index = 0;
+    node_t *current = head;
+
+    while(current != NULL)
+    {
+        current->index = index++;
+        current = current->next;
+    }
+}

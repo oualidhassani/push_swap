@@ -3,17 +3,18 @@
 node_t *findsmallest(node_t *head)
 {
     node_t *minnum = head;
-
     node_t *current = head->next;
 
     while(current != NULL)
     {
-        if(current->val < minnum->val)
+        if (current->val < minnum->val)
             minnum = current;
         current = current->next;
     }
-    return(minnum);
+    return minnum;
 }
+
+
 node_t *findlargest(node_t *head)
 {
     node_t *maxnum = head;
@@ -54,17 +55,3 @@ void sortthreenum(node_t **a)
     if((*a)->val > (*a)->next->val)
         sa(a);
 }
-// void fourthnum(node_t **a) 
-// {
-//     node_t *smallest_node = findsmallest(*a);
-//     node_t *b = NULL;
-//     node_t *head = *a;
-
-//     while(head != NULL)
-//     {
-//         if(head == smallest_node)
-
-//     }
-// }
-
-
