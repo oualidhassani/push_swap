@@ -141,8 +141,10 @@ int main(int ac, char **av)
     }
     ft_errors(ac, av);
     splitingarguments(ac, av, &a);
-    asignindices(a);
-    if(mystackissorted(a) == 0)
+    // asignindices(a);
+    if(mystackissorted(a) == 1)
+        exit(0);
+    else if(mystackissorted(a) == 0)
     {
         if(stacklen(a) == 3)
             sortthreenum(&a);
@@ -152,6 +154,11 @@ int main(int ac, char **av)
             fourthnum(&a, b);
         else if(stacklen(a) == 5)
             fivefunction(&a, b);
+        else if(stacklen(a) > 5)
+            ft_copytoarray(a);
+            
     }
-    printstack(a);
+    // ft_copytoarray(a);
+    // printf("\n");
+    // printstack(a);
 }

@@ -55,3 +55,25 @@ void sortthreenum(node_t **a)
     if((*a)->val > (*a)->next->val)
         sa(a);
 }
+
+void sortingarray(int *arr, int size)
+{
+    int i;
+    i = 0;
+    int tmp;
+    while(i < size)
+    {
+        int j = i + 1;
+        while(j < size)
+        {
+            if(arr[i] > arr[j])
+            {
+                tmp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = tmp;
+            }
+                j++;
+        }
+        i++;
+    }
+}
