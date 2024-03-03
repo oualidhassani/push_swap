@@ -39,5 +39,5 @@ node_t *findsmallest(node_t *head);
 void fivefunction(node_t **a, node_t *b); 
 int *ft_copytoarray(node_t *head);
 void sortingarray(int *arr, int size);
-
+void spaceerror(int ac, char **av);
 #endif

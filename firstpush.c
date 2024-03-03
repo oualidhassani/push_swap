@@ -60,7 +60,8 @@ void printstack(node_t *top)
 
 void splitingarguments(int ac, char **av, node_t **top)
 {
-    int i = 1;
+    int i;
+    i = 1;
     int j;
     int element;
     while (i < ac)
@@ -126,22 +127,16 @@ void splitingarguments(int ac, char **av, node_t **top)
 
 int main(int ac, char **av)
 {
-    int i = 1; 
+
     if(ac < 2)
         exit(1);
     node_t *a;
     a = NULL;
     node_t *b;
     b = NULL;
-    while(i < ac)
-    {
-        if (check_spase(av[i]) == 1)
-            displayerrors();
-        i++;
-    }
+    spaceerror(ac, av);
     ft_errors(ac, av);
     splitingarguments(ac, av, &a);
-    // asignindices(a);
     if(mystackissorted(a) == 1)
         exit(0);
     else if(mystackissorted(a) == 0)
@@ -158,7 +153,5 @@ int main(int ac, char **av)
             ft_copytoarray(a);
             
     }
-    // ft_copytoarray(a);
-    // printf("\n");
     // printstack(a);
 }

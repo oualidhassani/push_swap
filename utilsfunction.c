@@ -59,10 +59,10 @@ int *ft_copytoarray(node_t *head)
     }
     i = 0 ;
     sortingarray(array,stacklen(head));
-    while (i < counter)
-    {
-        printf("%d\n", array[i]);
-        i++;
-    }
+    // while (i < counter)
+    // {
+    //     printf("%d\n", array[i]);
+    //     i++;
+    // }
     return(array);
 }

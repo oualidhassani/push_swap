@@ -44,4 +44,13 @@ int checkduplicate(node_t *a, int nbr)
     }
     return(0);
 }
-
+void spaceerror(int ac, char **av)
+{
+    int i = 0;
+    while(i < ac)
+    {
+        if(check_spase(av[i]) == 1)
+            displayerrors();
+        i++;
+    }
+}
