@@ -57,6 +57,38 @@ void printstack(node_t *pop)
     }
 }
 
+
+// void splitingarguments(int ac, char **av, node_t **top)
+// {
+//     int i;
+//     i = ac - 1;
+//     int j;
+//     int element;
+//     while (i > 0)
+//     {
+//         char *arg = av[i];
+//         char **tok = ft_split(arg, ' ');
+//         j = 0;
+//         if (tok != NULL)
+//         {
+//             while (tok[j] != NULL)
+//             {
+//                 element = ft_atoi(tok[j]);
+//                 char *itoaresult = ft_itoa(element);
+//                 if ( checkduplicate(*top, ft_atoi(tok[j])) == 1 || !ft_is_string_digit(tok[j]) || ft_strcmp(tok[j], itoaresult) != 0)
+//                 {
+//                     displayerrors();
+//                     break;
+//                 }
+//                 push(top, element);
+//                 j++;
+//             }
+//         }
+//         ft_free(tok);
+//         i--;
+//     }
+// }
+
 void splitingarguments(int ac, char **av, node_t **top)
 {
     int i;
@@ -149,6 +181,9 @@ int main(int ac, char **av)
         else if(stacklen(a) == 5)
             fivefunction(&a, b);
         else if(stacklen(a) > 5)
+        {
             sortwithindex(&a, &b);
+            printstack(b);
+        }    
     }
 }

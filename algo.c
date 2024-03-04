@@ -79,23 +79,24 @@ void sortingarray(int *arr, int size)
 }
 void sortwithindex(node_t **a, node_t**b)
 {
+    // printstack(*a);
+// exit(0);
     int *arr;
     arr = ft_copytoarray((*a));
     int range = 0;
     int index_b;
     int len = stacklen(*a);
-    int resize = range + 5;
-    while (range < stacklen(*a))
+    int resize = 15 ;
+    while (range < len)
     {
         index_b = asignindices((*a)->val, arr, len);
-        // printf("index ->> %d\n",index_b);
-        if(index_b <= range)
+        if(index_b < range)
         {
             pb(a, b);
             rb(b);
             range++;
         }
-        if(index_b <= resize)
+        else if(index_b <= resize + range)
         {
             pb(a, b);
             range++;
@@ -103,8 +104,4 @@ void sortwithindex(node_t **a, node_t**b)
         else
             ra(a);
     }
-  
-    printstack(*a);
-    printf("\n------\n");
-    printstack(*b);
 }

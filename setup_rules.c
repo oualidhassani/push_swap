@@ -30,7 +30,7 @@ void pa(node_t **top, node_t **topb)
 {
     if((*topb) == NULL)
         return ;
-    while(*topb != NULL)
+    if(*topb != NULL)
     {
         int remov = removedbeg(topb);
         node_t *topnow = createnode(remov);
@@ -46,7 +46,7 @@ void pb(node_t **top, node_t **topb)
     if((*top) == NULL)
         return ;
 
-    while(*top != NULL)
+    if(*top != NULL)
     {
         int remv = removedbeg(top);
         // printf("---------> %d\n", remv);

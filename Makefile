@@ -1,4 +1,4 @@
-NAME = pushswap
+NAME = push_swap
 
 SRCS =  sort.c firstpush.c setup_rules.c utilsfunction.c parsing.c algo.c
 
@@ -8,7 +8,7 @@ AR = ar rcs
 
 CC = cc
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra #-fsanitize=address -g3 
 
 RM = rm -f
 
