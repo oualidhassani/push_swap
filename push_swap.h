@@ -18,7 +18,7 @@ void pa(node_t **top, node_t **topb);
 void pb(node_t **top, node_t **topb);
 void ra(node_t **top);
 void rra(node_t **top);
-void printstack(node_t *top);
+void printstack(node_t *pop);
 int removedbeg(node_t **head);
 void ft_free(char **str);
 node_t *createnode(int a);
@@ -34,10 +34,13 @@ node_t *findlargest(node_t *head);
 int stacklen(node_t *head);
 int checkduplicate(node_t *a, int nbr);
 void fourthnum(node_t **a, node_t *b);
-void asignindices(node_t *head);
+int asignindices(int content, int *arr, int len);
 node_t *findsmallest(node_t *head);
 void fivefunction(node_t **a, node_t *b); 
 int *ft_copytoarray(node_t *head);
 void sortingarray(int *arr, int size);
 void spaceerror(int ac, char **av);
+void sortwithindex(node_t **a, node_t **b);
+void rb(node_t **topb);
+
 #endif

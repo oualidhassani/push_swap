@@ -11,6 +11,7 @@ void ft_free(char **str)
     }
     free(str);
 }
+
 node_t *createnode(int a)
 {
     node_t * node;
@@ -26,7 +27,6 @@ node_t *createnode(int a)
     node->next = NULL;
     return(node);
 }
-
 void push(node_t **top, int data)
 {
     node_t *newnode = createnode(data);
@@ -45,13 +45,12 @@ void push(node_t **top, int data)
 
 }
 
-void printstack(node_t *top)
+void printstack(node_t *pop)
 {
-    if((top) == NULL || (top)->next == NULL)
-        return ;
-    node_t *pop = top;
-
-    while(pop != NULL)
+    // if((top) == NULL || (top)->next == NULL)
+    //     return ;
+    printf("list =>\n\n");
+    while(pop)
     {
         ft_printf("%d\n", pop->val);
         pop = pop->next;
@@ -139,7 +138,7 @@ int main(int ac, char **av)
     splitingarguments(ac, av, &a);
     if(mystackissorted(a) == 1)
         exit(0);
-    else if(mystackissorted(a) == 0)
+    else
     {
         if(stacklen(a) == 3)
             sortthreenum(&a);
@@ -150,8 +149,6 @@ int main(int ac, char **av)
         else if(stacklen(a) == 5)
             fivefunction(&a, b);
         else if(stacklen(a) > 5)
-            ft_copytoarray(a);
-            
+            sortwithindex(&a, &b);
     }
-    // printstack(a);
 }

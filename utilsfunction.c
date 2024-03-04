@@ -13,6 +13,7 @@ int removedbeg(node_t **head)
 
     free(tmp);
 
+    // printf("removed------>%d\n", removed);
     return(removed);
 }
 
@@ -28,16 +29,21 @@ int stacklen(node_t *head)
     return(counter);
 }
 
-void asignindices(node_t *head)
+int asignindices(int content, int *arr, int len)
 {
-    int index = 0;
-    node_t *current = head;
+    int index;
+    index = 0;
 
-    while(current != NULL)
+    while(index < len)
     {
-        current->index = index++;
-        current = current->next;
+        
+       if (arr[index] == content)
+       {
+            return index;
+       }
+        index++;
     }
+    return(0);
 }
 
 int *ft_copytoarray(node_t *head)
@@ -61,7 +67,7 @@ int *ft_copytoarray(node_t *head)
     sortingarray(array,stacklen(head));
     // while (i < counter)
     // {
-    //     printf("%d\n", array[i]);
+    //     printf("%d\n======> %d\n", array[i], i);
     //     i++;
     // }
     return(array);

@@ -5,7 +5,7 @@ void sa(node_t **top)
     write(1, "sa\n", 3);
     int tmp;
 
-    if((*top) == NULL)
+ if((*top) == NULL || (*top)-> next == NULL)
         return ;
 
     tmp = (*top)->val;
@@ -16,8 +16,7 @@ void sa(node_t **top)
 void sb(node_t **topb)
 {
         write(1, "sb\n", 3);
-
-    if((*topb) == NULL)
+    if((*topb) == NULL || (*topb)-> next == NULL)
         return ;
     
     int tmpb;
@@ -29,37 +28,43 @@ void sb(node_t **topb)
 
 void pa(node_t **top, node_t **topb)
 {
-     write(1, "pa\n", 3);
     if((*topb) == NULL)
         return ;
+    while(*topb != NULL)
+    {
+        int remov = removedbeg(topb);
+        node_t *topnow = createnode(remov);
 
-    int remov = removedbeg(topb);
-    node_t *topnow = createnode(remov);
-
-    topnow->next = *top;
-    *top = topnow;
+        topnow->next = *top;
+        *top = topnow;
+    }
+     write(1, "pa\n", 3);
 }
 
 void pb(node_t **top, node_t **topb)
 {
-    write(1, "pb\n", 3);
-     if((*top) == NULL)
+    if((*top) == NULL)
         return ;
 
-    int remv = removedbeg(top);
+    while(*top != NULL)
+    {
+        int remv = removedbeg(top);
+        // printf("---------> %d\n", remv);
+        node_t *topnnow = createnode(remv);
 
-    node_t *topnnow = createnode(remv);
+        topnnow->next = *topb;
 
-    topnnow->next = *topb; 
-    *topb = topnnow;
+        *topb = topnnow;
+
+    }
+    write(1, "pb\n", 3);
 
 }
 
 void ra(node_t **top)
 {
-    if((*top) == NULL)
+    if((*top) == NULL || (*top)-> next == NULL)
         return ;
-
 
     node_t *tmp = *top; 
     while(tmp->next != NULL)
@@ -74,18 +79,16 @@ void ra(node_t **top)
 
 void rb(node_t **topb)
 {
-    write(1, "rb\n", 3);
-    if((*topb) == NULL)
+    if((*topb) == NULL || (*topb)-> next == NULL)
         return ;
     
     node_t *tmp = *topb;
 
     while(tmp->next != NULL)
         tmp = tmp->next;
-
     int rmv = removedbeg(topb);
-
     tmp->next = createnode(rmv);
+    write(1, "rb\n", 3);
 }
 
 void rr(node_t **top, node_t **topb)
@@ -99,7 +102,7 @@ void rr(node_t **top, node_t **topb)
 void rra(node_t **top)
 {
     write(1, "rra\n", 4);
-    if((*top) == NULL)
+    if((*top) == NULL || (*top)-> next == NULL)
         return ;
     node_t *tmp = *top;
 
@@ -123,7 +126,7 @@ void rrb(node_t **topb)
 {
         write(1, "rrb\n", 4);
 
-    if((*topb) == NULL)
+   if((*topb) == NULL || (*topb)-> next == NULL)
         return ;
     node_t *tmp = *topb;
 

@@ -77,3 +77,34 @@ void sortingarray(int *arr, int size)
         i++;
     }
 }
+void sortwithindex(node_t **a, node_t**b)
+{
+    int *arr;
+    arr = ft_copytoarray((*a));
+    int range = 0;
+    int index_b;
+    int len = stacklen(*a);
+    int resize = range + 5;
+    while (range < stacklen(*a))
+    {
+        index_b = asignindices((*a)->val, arr, len);
+        // printf("index ->> %d\n",index_b);
+        if(index_b <= range)
+        {
+            pb(a, b);
+            rb(b);
+            range++;
+        }
+        if(index_b <= resize)
+        {
+            pb(a, b);
+            range++;
+        }
+        else
+            ra(a);
+    }
+  
+    printstack(*a);
+    printf("\n------\n");
+    printstack(*b);
+}
