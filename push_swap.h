@@ -42,5 +42,10 @@ void sortingarray(int *arr, int size);
 void spaceerror(int ac, char **av);
 void sortwithindex(node_t **a, node_t **b);
 void rb(node_t **topb);
-
+void rrb(node_t **topb);
+void sortinthestacka(node_t**a,  node_t**b);
+// void sortinthestacka(node_t **a, node_t **b);
+int max(node_t *b);
+int getindexofmax(node_t *b, int max);
+void errorhandling(int ac, char **av);
 #endif

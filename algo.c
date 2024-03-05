@@ -105,3 +105,43 @@ void sortwithindex(node_t **a, node_t**b)
             ra(a);
     }
 }
+
+void sortinthestacka(node_t **a , node_t**b)
+{
+    int len = stacklen((*b));
+    int i = 0;
+    // node_t **current = b;
+    int nasso;
+    int index_b;
+    nasso = len / 2;
+    while(i < len)
+    {
+        int n = max(*b);
+        index_b = getindexofmax(*b, n);
+        printf("max -----> %d\n", n);
+        if(index_b <= nasso)
+        {
+            // printf("ana dkhlt\n");
+            while(index_b != 0)
+            {
+                rb(b);
+                index_b--;
+            }    
+        }
+        else if(index_b > nasso)
+        {
+            // printf("fhdfhhhfd\n");
+            while(index_b != len)
+            {
+                rrb(b);
+                index_b++;
+            }
+        }
+        pa(a, b);
+        len--;
+        // printf("max----> %d\n", n);
+    }
+    printstack(*b);
+    printstack(*a);
+    printf("\n\n");
+}

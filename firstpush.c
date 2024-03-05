@@ -158,15 +158,13 @@ void splitingarguments(int ac, char **av, node_t **top)
 
 int main(int ac, char **av)
 {
-
     if(ac < 2)
         exit(1);
     node_t *a;
     a = NULL;
     node_t *b;
     b = NULL;
-    spaceerror(ac, av);
-    ft_errors(ac, av);
+    errorhandling(ac, av);
     splitingarguments(ac, av, &a);
     if(mystackissorted(a) == 1)
         exit(0);
@@ -183,7 +181,11 @@ int main(int ac, char **av)
         else if(stacklen(a) > 5)
         {
             sortwithindex(&a, &b);
-            printstack(b);
-        }    
+            sortinthestacka(&a, &b);
+        }
+        // else if(stacklen(a) > 100)
+        // {
+        
+        // }    
     }
 }

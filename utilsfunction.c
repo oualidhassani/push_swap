@@ -72,3 +72,48 @@ int *ft_copytoarray(node_t *head)
     // }
     return(array);
 }
+
+
+// int max (node_t *a)
+// {
+//     int maxnum;
+//     maxnum = *(int *)a;
+//     int current = *(int*)a->next;
+//     printf("%d\n", maxnum);
+//     printf("%d", current);
+//     return(maxnum);
+
+//     // while(current != NULL)
+//     // {
+//     //     if(max )
+//     // } 
+// }
+
+int max(node_t *b)
+{
+    node_t *current = b;
+    int maxnum = current->val;
+    while(current != NULL)
+    {
+        if(maxnum < current->val)
+            maxnum = current->val;
+        current = current->next;
+    }
+    return(maxnum);
+}
+
+int getindexofmax(node_t *b, int max)
+{
+    int i = 0;
+    
+    node_t *current = b;
+
+    while(current != NULL)
+    {
+        if(current->val == max)
+            return(i);
+        current = current->next;
+        i++;
+    }
+    return(-1);
+}

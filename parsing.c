@@ -54,3 +54,9 @@ void spaceerror(int ac, char **av)
         i++;
     }
 }
+
+void errorhandling(int ac, char **av)
+{
+    spaceerror(ac, av);
+    ft_errors(ac, av);
+}
