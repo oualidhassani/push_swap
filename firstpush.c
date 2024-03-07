@@ -82,6 +82,7 @@ void splitingarguments(int ac, char **av, node_t **top)
                 }
                 push(top, element);
                 j++;
+                free(itoaresult);
             }
         }
         i++;
