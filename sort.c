@@ -89,37 +89,6 @@ void sortwithindex(node_t **a, node_t**b)
     free(arr);
 }
 
-// void sortinthestacka(node_t **a , node_t**b)
-// {
-//     int len = stacklen((*b));
-//     int nasso;
-//     int index_b;
-//     nasso = len / 2;
-//     while(0 < len)
-//     {
-//         int n = max(*b);
-//         index_b = getindexofmax(*b, n);
-//         if(index_b <= nasso)
-//         {
-//             while(index_b != 0)
-//             {
-//                 rb(b);
-//                 index_b--;
-//             }    
-//         }
-//         else if(index_b > nasso)
-//         {
-//             while(index_b != len)
-//             {
-//                 rrb(b);
-//                 index_b++;
-//             }
-//         }
-//         pa(a, b);
-//         len--;
-//     }
-// }
-
 void sortingmorethan100(node_t **a , node_t**b)
 {
     int *arr;
@@ -146,5 +115,4 @@ void sortingmorethan100(node_t **a , node_t**b)
             ra(a);
     }
     free(arr);
-    // ft_free(a);
 }

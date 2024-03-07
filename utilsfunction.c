@@ -55,7 +55,10 @@ int *ft_copytoarray(node_t *head)
     int *array = (int *)malloc(counter * sizeof(int));
     int i = 0;
     if(array == NULL)
-        ft_printf("Fails allocation\n");
+    {
+        ft_putstr_fd2("Error", 0);
+        exit(1);
+    }
     
     while(i  < counter)
     {
@@ -65,11 +68,6 @@ int *ft_copytoarray(node_t *head)
     }
     i = 0 ;
     sortingarray(array,stacklen(head));
-    // while (i < counter)
-    // {
-    //     printf("%d\n======> %d\n", array[i], i);
-    //     i++;
-    // }
     return(array);
 }
 

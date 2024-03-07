@@ -2,7 +2,7 @@
 void displayerrors(void)
 {
     ft_putstr_fd("Error\n", 0);
-        exit(EXIT_FAILURE);
+        exit(1);
 }
 
 void ft_errors(int ac, char **av)

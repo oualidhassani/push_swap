@@ -20,7 +20,7 @@ node_t *createnode(int a)
     if(node == NULL)
     {
         ft_printf("fails allocation");
-        exit(EXIT_FAILURE);
+        exit(1);
     }
 
     node->val = a;
@@ -84,8 +84,8 @@ void splitingarguments(int ac, char **av, node_t **top)
                 j++;
             }
         }
-        ft_free(tok);
         i++;
+        ft_free(tok);
     }
 }
 
@@ -114,11 +114,6 @@ int main(int ac, char **av)
             fourthnum(&a, b);
         else if(stacklen(a) == 5)
             fivefunction(&a, b);
-        // else if(stacklen(a) < 100)
-        // {
-        //     sortwithindex(&a, &b);
-        //     sortinthestacka(&a, &b);
-        // }
         else if(stacklen(a) > 5)
         {
             sortwithindex(&a, &b);
@@ -126,4 +121,5 @@ int main(int ac, char **av)
         }
     }
     ft_freelist(a);
+    ft_freelist(b);
 }
