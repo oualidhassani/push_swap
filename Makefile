@@ -8,7 +8,7 @@ AR = ar rcs
 
 CC = cc
 
-CFLAGS = -Wall -Werror -Wextra #-fsanitize=address -g3 
+CFLAGS = -Wall -Werror -Wextra -g3 #-fsanitize=address  
 
 RM = rm -f
 

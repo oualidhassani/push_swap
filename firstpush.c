@@ -49,11 +49,12 @@ void splitingarguments(int ac, char **av, node_t **top)
     int i;
     i = 1;
     int j;
-    int element;
+    long element;
+    char **tok;
     while (i < ac)
     {
         char *arg = av[i];
-        char **tok = ft_split(arg, ' ');
+        tok = ft_split(arg, ' ');
         j = 0;
         if (tok != NULL)
         {
@@ -61,13 +62,12 @@ void splitingarguments(int ac, char **av, node_t **top)
             {
                 element = ft_atoi(tok[j]);
                 char *itoaresult = ft_itoa(element);
-                if ( checkduplicate(*top, ft_atoi(tok[j])) == 1 || !ft_is_string_digit(tok[j]) || ft_strcmp(tok[j], itoaresult) != 0)
+                if (element > 2147483647 || checkduplicate(*top, ft_atoi(tok[j])) == 1 || !ft_is_string_digit(tok[j]) || ft_strcmp(tok[j], itoaresult) != 0)
                 {
-                    ft_free(tok);
+                    ft_free(tok); 
                     ft_freelist((*top));
                     free(itoaresult);
                     displayerrors();
-                    break;
                 }
                 push(top, element);
                 free(itoaresult);

@@ -6,7 +6,7 @@
 /*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 18:08:30 by ohassani          #+#    #+#             */
-/*   Updated: 2024/02/23 14:35:55 by ohassani         ###   ########.fr       */
+/*   Updated: 2024/03/07 15:18:27 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 void	ft_putchar_fd(char c, int fd);
 char	*ft_strdup(const char *s);
-int		ft_atoi(const char *str);
+long		ft_atoi(char *str);
 void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
