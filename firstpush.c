@@ -63,8 +63,8 @@ void splitingarguments(int ac, char **av, node_t **top)
                 char *itoaresult = ft_itoa(element);
                 if ( checkduplicate(*top, ft_atoi(tok[j])) == 1 || !ft_is_string_digit(tok[j]) || ft_strcmp(tok[j], itoaresult) != 0)
                 {
-                    ft_freelist((*top));
                     ft_free(tok);
+                    ft_freelist((*top));
                     free(itoaresult);
                     displayerrors();
                     break;
