@@ -73,22 +73,15 @@ int *ft_copytoarray(node_t *head)
     return(array);
 }
 
-
-// int max (node_t *a)
-// {
-//     int maxnum;
-//     maxnum = *(int *)a;
-//     int current = *(int*)a->next;
-//     printf("%d\n", maxnum);
-//     printf("%d", current);
-//     return(maxnum);
-
-//     // while(current != NULL)
-//     // {
-//     //     if(max )
-//     // } 
-// }
-
+void ft_freelist(node_t *stack)
+{
+    while(stack != NULL)
+    {
+        node_t *next = stack;
+        stack = stack->next;
+        free(next);
+    }
+}
 int max(node_t *b)
 {
     node_t *current = b;

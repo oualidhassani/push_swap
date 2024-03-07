@@ -2,7 +2,6 @@
 
 void sa(node_t **top)
 {
-    write(1, "sa\n", 3);
     int tmp;
 
  if((*top) == NULL || (*top)-> next == NULL)
@@ -11,11 +10,11 @@ void sa(node_t **top)
     tmp = (*top)->val;
     (*top)->val = (*top)->next->val;
     (*top)->next->val = tmp;
+    write(1, "sa\n", 3);
 }
 
 void sb(node_t **topb)
 {
-        write(1, "sb\n", 3);
     if((*topb) == NULL || (*topb)-> next == NULL)
         return ;
     
@@ -24,6 +23,7 @@ void sb(node_t **topb)
     tmpb = (*topb)->val;
     (*topb)->val = (*topb)->next->val;
     (*topb)->next->val = tmpb;
+        write(1, "sb\n", 3);
 }
 
 void pa(node_t **top, node_t **topb)
@@ -71,7 +71,7 @@ void ra(node_t **top)
         tmp = tmp->next;
 
     int rmv = removedbeg(top);
-
+    // free()
     tmp->next = createnode(rmv);
 
     write(1, "ra\n", 3);
@@ -93,15 +93,13 @@ void rb(node_t **topb)
 
 void rr(node_t **top, node_t **topb)
 {
-        write(1, "rr\n", 3);
-
     ra(top);
     rb(topb);
+        write(1, "rr\n", 3);
 }
 
 void rra(node_t **top)
 {
-    write(1, "rra\n", 4);
     if((*top) == NULL || (*top)-> next == NULL)
         return ;
     node_t *tmp = *top;
@@ -120,11 +118,11 @@ void rra(node_t **top)
     newone->next = *top;
 
     *top = newone;
+    write(1, "rra\n", 4);
 }
 
 void rrb(node_t **topb)
 {
-        write(1, "rrb\n", 4);
 
    if((*topb) == NULL || (*topb)-> next == NULL)
         return ;
@@ -144,11 +142,12 @@ void rrb(node_t **topb)
     newone->next = *topb;
 
     *topb = newone;
+        write(1, "rrb\n", 4);
 }
 
 void rrr(node_t **top, node_t **topb)
 {
-    write(1, "rrr\n", 4);
     rra(top);
     rrb(topb);
+    write(1, "rrr\n", 4);
 }

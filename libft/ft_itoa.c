@@ -6,7 +6,7 @@
 /*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 12:06:15 by ohassani          #+#    #+#             */
-/*   Updated: 2024/02/23 11:52:51 by ohassani         ###   ########.fr       */
+/*   Updated: 2024/03/06 19:15:30 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ char	*ft_itoa(int n)
 		n = n / 10;
 	}
 	return (ptr);
+	// free(ptr);
 }
 
 // int main ()
