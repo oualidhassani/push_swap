@@ -9,8 +9,6 @@ void ft_errors(int ac, char **av)
 {
     int i;
     i = 1;
-    // int j;
-    // j = 0 ;
     while (i < ac)
     {
         if(av[i][0] == '\0')

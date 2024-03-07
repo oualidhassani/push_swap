@@ -19,7 +19,7 @@ node_t *createnode(int a)
 
     if(node == NULL)
     {
-        ft_printf("fails allocation");
+        ft_putstr_fd2("Error\n", 0);
         exit(1);
     }
 
@@ -44,20 +44,6 @@ void push(node_t **top, int data)
     tmp->next = newnode;
 
 }
-
-void printstack(node_t *pop)
-{
-    // if((top) == NULL || (top)->next == NULL)
-    //     return ;
-    printf("list =>\n\n");
-    while(pop)
-    {
-        ft_printf("%d\n", pop->val);
-        pop = pop->next;
-    }
-}
-
-
 void splitingarguments(int ac, char **av, node_t **top)
 {
     int i;
@@ -77,12 +63,15 @@ void splitingarguments(int ac, char **av, node_t **top)
                 char *itoaresult = ft_itoa(element);
                 if ( checkduplicate(*top, ft_atoi(tok[j])) == 1 || !ft_is_string_digit(tok[j]) || ft_strcmp(tok[j], itoaresult) != 0)
                 {
+                    ft_freelist((*top));
+                    ft_free(tok);
+                    free(itoaresult);
                     displayerrors();
                     break;
                 }
                 push(top, element);
-                j++;
                 free(itoaresult);
+                j++;
             }
         }
         i++;
