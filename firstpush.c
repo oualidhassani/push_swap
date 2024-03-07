@@ -39,6 +39,7 @@ t_node	*createnode(int a)
 	node->next = NULL;
 	return (node);
 }
+
 void	push(t_node **top, int data)
 {
 	t_node	*newnode;
@@ -55,6 +56,7 @@ void	push(t_node **top, int data)
 		tmp = tmp->next;
 	tmp->next = newnode;
 }
+
 void	splitingarguments(int ac, char **av, t_node **top)
 {
 	int		i;
@@ -79,12 +81,7 @@ void	splitingarguments(int ac, char **av, t_node **top)
 				if (element > 2147483647 || checkduplicate(*top,
 						ft_atoi(tok[j])) == 1 || !ft_is_string_digit(tok[j])
 					|| ft_strcmp(tok[j], itoaresult) != 0)
-				{
-					ft_free(tok);
-					ft_freelist((*top));
-					free(itoaresult);
-					displayerrors();
-				}
+					freeallthealloaction(tok, (*top), itoaresult);
 				push(top, element);
 				free(itoaresult);
 				j++;
@@ -113,19 +110,7 @@ int	main(int ac, char **av)
 	}
 	else
 	{
-		if (stacklen(a) == 3)
-			sortthreenum(&a);
-		else if (stacklen(a) == 2)
-			sa(&a);
-		else if (stacklen(a) == 4)
-			fourthnum(&a, b);
-		else if (stacklen(a) == 5)
-			fivefunction(&a, b);
-		else if (stacklen(a) > 5)
-		{
-			sortwithindex(&a, &b);
-			sortingmorethan100(&a, &b);
-		}
+		callingfunction(a, b);
 	}
 	ft_freelist(a);
 	ft_freelist(b);

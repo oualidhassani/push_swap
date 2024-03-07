@@ -61,4 +61,6 @@ int				getindexofmax(t_node *b, int max);
 void			errorhandling(int ac, char **av);
 void			sortingmorethan100(t_node **a, t_node **b);
 void			ft_freelist(t_node *b);
+void			callingfunction(t_node *a, t_node *b);
+void			freeallthealloaction(char **str, t_node *stack, char *str1);
 #endif
