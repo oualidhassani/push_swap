@@ -44,3 +44,17 @@ int	getindexofmax(t_node *b, int max)
 	}
 	return (-1);
 }
+
+void	fourthnumsort(t_node **a, t_node *b)
+{
+	pb(a, &b);
+	sortthreenum((a));
+	pa(a, &b);
+}
+
+void	fivenumsort(t_node **a, t_node *b)
+{
+	pb(a, &b);
+	fourthnum(a, b);
+	pa(a, &b);
+}

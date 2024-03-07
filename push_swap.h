@@ -24,6 +24,8 @@ typedef struct node
 	struct node	*next;
 }				t_node;
 
+void			fivenumsort(t_node **a, t_node *b);
+void			fourthnumsort(t_node **a, t_node *b);
 void			sa(t_node **top);
 void			sb(t_node **topb);
 void			ss(t_node **top, t_node **topb);

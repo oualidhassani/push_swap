@@ -19,14 +19,10 @@ void	fourthnum(t_node **a, t_node *b)
 
 	smallest_node = findsmallest(*a);
 	head = *a;
-	if (*a == NULL)
-		return ;
 	if (head == smallest_node)
 	{
 		head = head->next;
-		pb(a, &b);
-		sortthreenum((a));
-		pa(a, &b);
+		fourthnumsort(a, b);
 	}
 	else
 	{
@@ -41,9 +37,7 @@ void	fourthnum(t_node **a, t_node *b)
 				rra(a);
 		}
 	}
-	pb(a, &b);
-	sortthreenum((a));
-	pa(a, &b);
+	fourthnumsort(a, b);
 }
 
 void	fivefunction(t_node **a, t_node *b)
@@ -53,14 +47,10 @@ void	fivefunction(t_node **a, t_node *b)
 
 	smallest_node = findsmallest(*a);
 	head = *a;
-	if (*a == NULL)
-		return ;
 	if (head == smallest_node)
 	{
 		head = head->next;
-		pb(a, &b);
-		fourthnum(a, b);
-		pa(a, &b);
+		fivenumsort(a, b);
 	}
 	else
 	{
@@ -75,9 +65,7 @@ void	fivefunction(t_node **a, t_node *b)
 				rra(a);
 		}
 	}
-	pb(a, &b);
-	fourthnum(a, b);
-	pa(a, &b);
+	fivenumsort(a, b);
 }
 
 void	sortwithindex(t_node **a, t_node **b)
