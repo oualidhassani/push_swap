@@ -14,14 +14,15 @@
 # define LIBFT_H
 
 # include <stdarg.h>
+# include <stdint.h>
+# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-#include <stdint.h>
-#include <stdio.h>
 
-#ifndef BUFFER_SIZE
-#define BUFFER_SIZE 12
-#endif 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 12
+# endif
+
 int		ft_is_string_digit(char *str);
 size_t	ft_calcul(char *s, char c);
 size_t	ft_strlen(const char *s);
@@ -31,7 +32,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 void	ft_putchar_fd(char c, int fd);
 char	*ft_strdup(const char *s);
-long		ft_atoi(char *str);
+long	ft_atoi(char *str);
 void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -82,5 +83,5 @@ char	*ft_substr1(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin1(char const *s1, char const *s2);
 char	*mybuffer1(int fd, char *accumulation, char *buffer);
 char	*linesub1(char *line_buffer);
-void displayerrors(void);
+void	displayerrors(void);
 #endif

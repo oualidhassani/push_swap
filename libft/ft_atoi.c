@@ -25,10 +25,10 @@ long	ft_atoi(char *str)
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
-		if(str[i] == '-')
+		if (str[i] == '-')
 			sign = -1;
 		i++;
-		if (str[i] == '+' || str [i] == '-' || str[i] == '\0')
+		if (str[i] == '+' || str[i] == '-' || str[i] == '\0')
 			return (2147483649);
 	}
 	while (str[i] > 47 && str[i] < 58)

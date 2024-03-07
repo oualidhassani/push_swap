@@ -1,110 +1,95 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utilsfunction.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ohassani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/07 18:50:46 by ohassani          #+#    #+#             */
+/*   Updated: 2024/03/07 18:50:49 by ohassani         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int removedbeg(node_t **head)
+int	removedbeg(t_node **head)
 {
+	int		removed;
+	t_node	*tmp;
 
-    int removed = (*head)->val;
-
-    node_t *tmp;
-
-    tmp = (*head);
-
-    (*head) = (*head)->next;
-
-    free(tmp);
-
-    // printf("removed------>%d\n", removed);
-    return(removed);
+	removed = (*head)->val;
+	tmp = (*head);
+	(*head) = (*head)->next;
+	free(tmp);
+	return (removed);
 }
 
-int stacklen(node_t *head)
+int	stacklen(t_node *head)
 {
-    node_t *current = head;
-    int counter = 0;
-    while(current != NULL)
-    {
-        counter++;
-        current = current->next;
-    }
-    return(counter);
+	t_node	*current;
+	int		counter;
+
+	current = head;
+	counter = 0;
+	while (current != NULL)
+	{
+		counter++;
+		current = current->next;
+	}
+	return (counter);
 }
 
-int asignindices(int content, int *arr, int len)
+int	asignindices(int content, int *arr, int len)
 {
-    int index;
-    index = 0;
+	int	index;
 
-    while(index < len)
-    {
-        
-       if (arr[index] == content)
-       {
-            return index;
-       }
-        index++;
-    }
-    return(0);
+	index = 0;
+	while (index < len)
+	{
+		if (arr[index] == content)
+		{
+			return (index);
+		}
+		index++;
+	}
+	return (0);
 }
 
-int *ft_copytoarray(node_t *head)
+int	*ft_copytoarray(t_node *head)
 {
-    node_t *current = head;
-    int counter;
-    counter = stacklen(head);
+	t_node	*current;
+	int		counter;
+	int		*array;
+	int		i;
 
-    int *array = (int *)malloc(counter * sizeof(int));
-    int i = 0;
-    if(array == NULL)
-    {
-        ft_putstr_fd2("Error", 0);
-        exit(1);
-    }
-    
-    while(i  < counter)
-    {
-        array[i] = current->val;
-        current = current->next;
-        i++;
-    }
-    i = 0 ;
-    sortingarray(array,stacklen(head));
-    return(array);
+	current = head;
+	counter = stacklen(head);
+	array = (int *)malloc(counter * sizeof(int));
+	i = 0;
+	if (array == NULL)
+	{
+		ft_putstr_fd2("Error", 0);
+		exit(1);
+	}
+	while (i < counter)
+	{
+		array[i] = current->val;
+		current = current->next;
+		i++;
+	}
+	i = 0;
+	sortingarray(array, stacklen(head));
+	return (array);
 }
 
-void ft_freelist(node_t *stack)
+void	ft_freelist(t_node *stack)
 {
-    while(stack != NULL)
-    {
-        node_t *next = stack;
-        stack = stack->next;
-        free(next);
-    }
-}
-int max(node_t *b)
-{
-    node_t *current = b;
-    int maxnum = current->val;
-    while(current != NULL)
-    {
-        if(maxnum < current->val)
-            maxnum = current->val;
-        current = current->next;
-    }
-    return(maxnum);
-}
+	t_node	*next;
 
-int getindexofmax(node_t *b, int max)
-{
-    int i = 0;
-    
-    node_t *current = b;
-
-    while(current != NULL)
-    {
-        if(current->val == max)
-            return(i);
-        current = current->next;
-        i++;
-    }
-    return(-1);
+	while (stack != NULL)
+	{
+		next = stack;
+		stack = stack->next;
+		free(next);
+	}
 }

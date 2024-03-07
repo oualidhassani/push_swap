@@ -1,115 +1,132 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   firstpush.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ohassani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/07 18:37:53 by ohassani          #+#    #+#             */
+/*   Updated: 2024/03/07 18:37:55 by ohassani         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-
-void ft_free(char **str)
+void	ft_free(char **str)
 {
-    int i = 0;
-    while(str[i])
-    {
-        free(str[i]);
-        i++;
-    }
-    free(str);
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
 }
 
-node_t *createnode(int a)
+t_node	*createnode(int a)
 {
-    node_t * node;
-    node  = (node_t *)malloc(sizeof(node_t));
+	t_node	*node;
 
-    if(node == NULL)
-    {
-        ft_putstr_fd2("Error\n", 0);
-        exit(1);
-    }
-
-    node->val = a;
-    node->next = NULL;
-    return(node);
+	node = (t_node *)malloc(sizeof(t_node));
+	if (node == NULL)
+	{
+		ft_putstr_fd2("Error\n", 0);
+		exit(1);
+	}
+	node->val = a;
+	node->next = NULL;
+	return (node);
 }
-void push(node_t **top, int data)
+void	push(t_node **top, int data)
 {
-    node_t *newnode = createnode(data);
+	t_node	*newnode;
+	t_node	*tmp;
 
-    node_t *tmp = *top;
-
-      if (tmp == NULL)
-      {
-        *top = newnode;
-        return ;  
-      }
-    while(tmp->next != NULL)
-        tmp = tmp->next;
-
-    tmp->next = newnode;
-
+	newnode = createnode(data);
+	tmp = *top;
+	if (tmp == NULL)
+	{
+		*top = newnode;
+		return ;
+	}
+	while (tmp->next != NULL)
+		tmp = tmp->next;
+	tmp->next = newnode;
 }
-void splitingarguments(int ac, char **av, node_t **top)
+void	splitingarguments(int ac, char **av, t_node **top)
 {
-    int i;
-    i = 1;
-    int j;
-    long element;
-    char **tok;
-    while (i < ac)
-    {
-        char *arg = av[i];
-        tok = ft_split(arg, ' ');
-        j = 0;
-        if (tok != NULL)
-        {
-            while (tok[j] != NULL)
-            {
-                element = ft_atoi(tok[j]);
-                char *itoaresult = ft_itoa(element);
-                if (element > 2147483647 || checkduplicate(*top, ft_atoi(tok[j])) == 1 || !ft_is_string_digit(tok[j]) || ft_strcmp(tok[j], itoaresult) != 0)
-                {
-                    ft_free(tok); 
-                    ft_freelist((*top));
-                    free(itoaresult);
-                    displayerrors();
-                }
-                push(top, element);
-                free(itoaresult);
-                j++;
-            }
-        }
-        i++;
-        ft_free(tok);
-    }
+	int		i;
+	int		j;
+	long	element;
+	char	**tok;
+	char	*arg;
+	char	*itoaresult;
+
+	i = 1;
+	while (i < ac)
+	{
+		arg = av[i];
+		tok = ft_split(arg, ' ');
+		j = 0;
+		if (tok != NULL)
+		{
+			while (tok[j] != NULL)
+			{
+				element = ft_atoi(tok[j]);
+				itoaresult = ft_itoa(element);
+				if (element > 2147483647 || checkduplicate(*top,
+						ft_atoi(tok[j])) == 1 || !ft_is_string_digit(tok[j])
+					|| ft_strcmp(tok[j], itoaresult) != 0)
+				{
+					ft_free(tok);
+					ft_freelist((*top));
+					free(itoaresult);
+					displayerrors();
+				}
+				push(top, element);
+				free(itoaresult);
+				j++;
+			}
+		}
+		i++;
+		ft_free(tok);
+	}
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-    if(ac < 2)
-        exit(1);
-    node_t *a;
-    a = NULL;
-    node_t *b;
-    b = NULL;
-    errorhandling(ac, av);
-    splitingarguments(ac, av, &a);
-    if(mystackissorted(a) == 1)
-    {
-        ft_freelist(a);
-        exit(0);
-    }
-    else
-    {
-        if(stacklen(a) == 3)
-            sortthreenum(&a);
-        else if(stacklen(a) == 2)
-            sa(&a);
-        else if(stacklen(a) == 4)
-            fourthnum(&a, b);
-        else if(stacklen(a) == 5)
-            fivefunction(&a, b);
-        else if(stacklen(a) > 5)
-        {
-            sortwithindex(&a, &b);
-            sortingmorethan100(&a, &b);
-        }
-    }
-    ft_freelist(a);
-    ft_freelist(b);
+	t_node	*a;
+	t_node	*b;
+
+	if (ac < 2)
+		exit(1);
+	a = NULL;
+	b = NULL;
+	errorhandling(ac, av);
+	splitingarguments(ac, av, &a);
+	if (mystackissorted(a) == 1)
+	{
+		ft_freelist(a);
+		exit(0);
+	}
+	else
+	{
+		if (stacklen(a) == 3)
+			sortthreenum(&a);
+		else if (stacklen(a) == 2)
+			sa(&a);
+		else if (stacklen(a) == 4)
+			fourthnum(&a, b);
+		else if (stacklen(a) == 5)
+			fivefunction(&a, b);
+		else if (stacklen(a) > 5)
+		{
+			sortwithindex(&a, &b);
+			sortingmorethan100(&a, &b);
+		}
+	}
+	ft_freelist(a);
+	ft_freelist(b);
 }

@@ -1,79 +1,95 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   algo.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ohassani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/07 18:37:01 by ohassani          #+#    #+#             */
+/*   Updated: 2024/03/07 18:37:04 by ohassani         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-node_t *findsmallest(node_t *head)
+t_node	*findsmallest(t_node *head)
 {
-    node_t *minnum = head;
-    node_t *current = head->next;
+	t_node	*minnum;
+	t_node	*current;
 
-    while(current != NULL)
-    {
-        if (current->val < minnum->val)
-            minnum = current;
-        current = current->next;
-    }
-    return minnum;
+	minnum = head;
+	current = head->next;
+	while (current != NULL)
+	{
+		if (current->val < minnum->val)
+			minnum = current;
+		current = current->next;
+	}
+	return (minnum);
 }
 
-
-node_t *findlargest(node_t *head)
+t_node	*findlargest(t_node *head)
 {
-    node_t *maxnum = head;
+	t_node	*maxnum;
+	t_node	*current;
 
-    node_t *current = head->next;
-
-    while(current != NULL)
-    {
-        if(current->val > maxnum->val)
-            maxnum = current;
-        current = current->next;
-    }
-    return(maxnum);
+	maxnum = head;
+	current = head->next;
+	while (current != NULL)
+	{
+		if (current->val > maxnum->val)
+			maxnum = current;
+		current = current->next;
+	}
+	return (maxnum);
 }
 
-int mystackissorted(node_t *stack)
+int	mystackissorted(t_node *stack)
 {
-    if(stack == NULL)
-        return(0);
-    while(stack->next != NULL)
-    {
-        if(stack->val > stack->next->val)
-            return(0);
-        stack = stack->next;
-    }
-    return(1);
-}
-void sortthreenum(node_t **a)
-{
-    node_t *heighstnode;
-
-    heighstnode = findlargest(*a);
-
-    if((*a) == heighstnode)
-        ra(a);
-    else if ((*a)->next == heighstnode)
-        rra(a);
-    if((*a)->val > (*a)->next->val)
-        sa(a);
+	if (stack == NULL)
+		return (0);
+	while (stack->next != NULL)
+	{
+		if (stack->val > stack->next->val)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
 }
 
-void sortingarray(int *arr, int size)
+void	sortthreenum(t_node **a)
 {
-    int i;
-    i = 0;
-    int tmp;
-    while(i < size)
-    {
-        int j = i + 1;
-        while(j < size)
-        {
-            if(arr[i] > arr[j])
-            {
-                tmp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = tmp;
-            }
-                j++;
-        }
-        i++;
-    }
+	t_node	*heighstnode;
+
+	heighstnode = findlargest(*a);
+	if ((*a) == heighstnode)
+		ra(a);
+	else if ((*a)->next == heighstnode)
+		rra(a);
+	if ((*a)->val > (*a)->next->val)
+		sa(a);
+}
+
+void	sortingarray(int *arr, int size)
+{
+	int	i;
+	int	tmp;
+	int	j;
+
+	i = 0;
+	while (i < size)
+	{
+		j = i + 1;
+		while (j < size)
+		{
+			if (arr[i] > arr[j])
+			{
+				tmp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = tmp;
+			}
+			j++;
+		}
+		i++;
+	}
 }

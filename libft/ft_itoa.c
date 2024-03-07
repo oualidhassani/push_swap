@@ -55,11 +55,4 @@ char	*ft_itoa(int n)
 		n = n / 10;
 	}
 	return (ptr);
-	// free(ptr);
 }
-
-// int main ()
-// {
-//   char *res = ft_itoa(0);
-//   printf("%s", res);
-// }

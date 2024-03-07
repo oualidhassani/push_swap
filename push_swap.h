@@ -1,53 +1,64 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ohassani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/07 18:57:49 by ohassani          #+#    #+#             */
+/*   Updated: 2024/03/07 18:57:52 by ohassani         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "./libft/libft.h"
+# include "./libft/libft.h"
+# include <stdio.h>
+# include <stdlib.h>
 
-typedef struct node {
-    int val;
-    int index;
-    struct node *next;
-} node_t;
+typedef struct node
+{
+	int			val;
+	int			index;
+	struct node	*next;
+}				t_node;
 
-void sa(node_t **top);
-void sb(node_t **topb);
-void ss(node_t **top, node_t **topb);
-void pa(node_t **top, node_t **topb);
-void pb(node_t **top, node_t **topb);
-void ra(node_t **top);
-void rra(node_t **top);
-void printstack(node_t *pop);
-int removedbeg(node_t **head);
-void ft_free(char **str);
-node_t *createnode(int a);
-void push(node_t **top, int data);
-void printstack(node_t *top);
-void splitingarguments(int ac, char **av, node_t **top);
-void ft_errors(int ac, char**av);
-void displayerrors(void);
-int check_spase(char *str);
-int mystackissorted(node_t *stack);
-void sortthreenum(node_t **a);
-node_t *findlargest(node_t *head);
-int stacklen(node_t *head);
-int checkduplicate(node_t *a, int nbr);
-void fourthnum(node_t **a, node_t *b);
-int asignindices(int content, int *arr, int len);
-node_t *findsmallest(node_t *head);
-void fivefunction(node_t **a, node_t *b); 
-int *ft_copytoarray(node_t *head);
-void sortingarray(int *arr, int size);
-void spaceerror(int ac, char **av);
-void sortwithindex(node_t **a, node_t **b);
-void rb(node_t **topb);
-void rrb(node_t **topb);
-// void sortinthestacka(node_t**a,  node_t**b);
-// void sortinthestacka(node_t **a, node_t **b);
-int max(node_t *b);
-int getindexofmax(node_t *b, int max);
-void errorhandling(int ac, char **av);
-void sortingmorethan100(node_t **a , node_t**b);
-void ft_freelist(node_t *b);
+void			sa(t_node **top);
+void			sb(t_node **topb);
+void			ss(t_node **top, t_node **topb);
+void			pa(t_node **top, t_node **topb);
+void			pb(t_node **top, t_node **topb);
+void			ra(t_node **top);
+void			rra(t_node **top);
+void			printstack(t_node *pop);
+int				removedbeg(t_node **head);
+void			ft_free(char **str);
+t_node			*createnode(int a);
+void			push(t_node **top, int data);
+void			printstack(t_node *top);
+void			splitingarguments(int ac, char **av, t_node **top);
+void			ft_errors(int ac, char **av);
+void			displayerrors(void);
+int				check_spase(char *str);
+int				mystackissorted(t_node *stack);
+void			sortthreenum(t_node **a);
+t_node			*findlargest(t_node *head);
+int				stacklen(t_node *head);
+int				checkduplicate(t_node *a, int nbr);
+void			fourthnum(t_node **a, t_node *b);
+int				asignindices(int content, int *arr, int len);
+t_node			*findsmallest(t_node *head);
+void			fivefunction(t_node **a, t_node *b);
+int				*ft_copytoarray(t_node *head);
+void			sortingarray(int *arr, int size);
+void			spaceerror(int ac, char **av);
+void			sortwithindex(t_node **a, t_node **b);
+void			rb(t_node **topb);
+void			rrb(t_node **topb);
+int				max(t_node *b);
+int				getindexofmax(t_node *b, int max);
+void			errorhandling(int ac, char **av);
+void			sortingmorethan100(t_node **a, t_node **b);
+void			ft_freelist(t_node *b);
 #endif
