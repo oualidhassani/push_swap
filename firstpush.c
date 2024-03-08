@@ -61,10 +61,10 @@ void	splitingarguments(int ac, char **av, t_node **top)
 {
 	int		i;
 	int		j;
-	long	element;
 	char	**tok;
 	char	*arg;
 	char	*itoaresult;
+	long	element;
 
 	i = 1;
 	while (i < ac)

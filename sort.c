@@ -100,33 +100,25 @@ void	sortwithindex(t_node **a, t_node **b, int len)
 void	sortinthestacka(t_node **a, t_node **b)
 {
 	int	len;
-	int	i;
 	int	nasso;
 	int	index_b;
 	int	n;
 
 	len = stacklen((*b));
-	i = 0;
 	nasso = len / 2;
-	while (i < len)
+	while (0 < len)
 	{
 		n = max(*b);
 		index_b = getindexofmax(*b, n);
 		if (index_b <= nasso)
 		{
-			while (index_b != 0)
-			{
+			while (index_b-- != 0)
 				rb(b);
-				index_b--;
-			}
 		}
 		else if (index_b > nasso)
 		{
-			while (index_b != len)
-			{
+			while (index_b++ != len)
 				rrb(b);
-				index_b++;
-			}
 		}
 		pa(a, b);
 		len--;
