@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   firstpush.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohassani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:37:53 by ohassani          #+#    #+#             */
-/*   Updated: 2024/03/07 18:37:55 by ohassani         ###   ########.fr       */
+/*   Updated: 2024/03/08 13:07:22 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,26 @@ int	main(int ac, char **av)
 		exit(0);
 	}
 	else
-		callingfunction(a, b);
+	{
+		if (stacklen(a) == 3)
+		sortthreenum(&a);
+	else if (stacklen(a) == 2)
+		sa(&a);
+	else if (stacklen(a) == 4)
+		fourthnum(&a, b);
+	else if (stacklen(a) == 5)
+		fivefunction(&a, b);
+	else if (stacklen(a) > 5)
+	{
+		sortwithindex(&a, &b);
+		sortinthestacka(&a, &b);
+	}
+	}
+	while(a)
+	{
+		printf("%d\n", a->val);
+		a = a->next;
+	}
 	ft_freelist(a);
 	ft_freelist(b);
 }

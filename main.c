@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohassani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 19:29:44 by ohassani          #+#    #+#             */
-/*   Updated: 2024/03/07 19:29:45 by ohassani         ###   ########.fr       */
+/*   Updated: 2024/03/08 13:06:52 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	callingfunction(t_node *a, t_node *b)
 	else if (stacklen(a) > 5)
 	{
 		sortwithindex(&a, &b);
-		sortingmorethan100(&a, &b);
+		sortinthestacka(&a, &b);
 	}
 }
 

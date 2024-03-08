@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohassani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:49:59 by ohassani          #+#    #+#             */
-/*   Updated: 2024/03/07 18:50:01 by ohassani         ###   ########.fr       */
+/*   Updated: 2024/03/08 13:00:03 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	sortwithindex(t_node **a, t_node **b)
 	arr = ft_copytoarray((*a));
 	range = 0;
 	len = stacklen(*a);
-	resize = 15;
+	resize = 30;
 	while (range < len)
 	{
 		index_b = asignindices((*a)->val, arr, len);
@@ -100,34 +100,34 @@ void	sortwithindex(t_node **a, t_node **b)
 	free(arr);
 }
 
-void	sortingmorethan100(t_node **a, t_node **b)
+void sortinthestacka(t_node **a , t_node**b)
 {
-	int	*arr;
-	int	range;
-	int	index_b;
-	int	len;
-	int	resize;
-
-	arr = ft_copytoarray((*a));
-	range = 0;
-	len = stacklen(*a);
-	resize = 30;
-	while (range < len)
-	{
-		index_b = asignindices((*a)->val, arr, len);
-		if (index_b < range)
-		{
-			pb(a, b);
-			rb(b);
-			range++;
-		}
-		else if (index_b <= resize + range)
-		{
-			pb(a, b);
-			range++;
-		}
-		else
-			ra(a);
-	}
-	free(arr);
+    int len = stacklen((*b));
+    int i = 0;
+    int nasso;
+    int index_b;
+    nasso = len / 2;
+    while(i < len)
+    {
+        int n = max(*b);
+        index_b = getindexofmax(*b, n);
+        if(index_b <= nasso)
+        {
+            while(index_b != 0)
+            {
+                rb(b);
+                index_b--;
+            }    
+        }
+        else if(index_b > nasso)
+        {
+            while(index_b != len)
+            {
+                rrb(b);
+                index_b++;
+            }
+        }
+        pa(a, b);
+        len--;
+    }
 }

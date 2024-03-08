@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohassani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:57:49 by ohassani          #+#    #+#             */
-/*   Updated: 2024/03/07 18:57:52 by ohassani         ###   ########.fr       */
+/*   Updated: 2024/03/08 13:07:14 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void			rrb(t_node **topb);
 int				max(t_node *b);
 int				getindexofmax(t_node *b, int max);
 void			errorhandling(int ac, char **av);
-void			sortingmorethan100(t_node **a, t_node **b);
+void 			sortinthestacka(t_node **a , t_node **b);
 void			ft_freelist(t_node *b);
 void			callingfunction(t_node *a, t_node *b);
 void			freeallthealloaction(char **str, t_node *stack, char *str1);
