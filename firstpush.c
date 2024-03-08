@@ -96,6 +96,7 @@ int	main(int ac, char **av)
 {
 	t_node	*a;
 	t_node	*b;
+	int		len;
 
 	if (ac < 2)
 		exit(1);
@@ -103,32 +104,14 @@ int	main(int ac, char **av)
 	b = NULL;
 	errorhandling(ac, av);
 	splitingarguments(ac, av, &a);
+	len = stacklen(a);
 	if (mystackissorted(a) == 1)
 	{
 		ft_freelist(a);
 		exit(0);
 	}
 	else
-	{
-		if (stacklen(a) == 3)
-		sortthreenum(&a);
-	else if (stacklen(a) == 2)
-		sa(&a);
-	else if (stacklen(a) == 4)
-		fourthnum(&a, b);
-	else if (stacklen(a) == 5)
-		fivefunction(&a, b);
-	else if (stacklen(a) > 5)
-	{
-		sortwithindex(&a, &b);
-		sortinthestacka(&a, &b);
-	}
-	}
-	while(a)
-	{
-		printf("%d\n", a->val);
-		a = a->next;
-	}
+		callingfunction(&a, &b, len);
 	ft_freelist(a);
 	ft_freelist(b);
 }

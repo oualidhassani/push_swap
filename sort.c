@@ -68,17 +68,15 @@ void	fivefunction(t_node **a, t_node *b)
 	fivenumsort(a, b);
 }
 
-void	sortwithindex(t_node **a, t_node **b)
+void	sortwithindex(t_node **a, t_node **b, int len)
 {
 	int	*arr;
 	int	range;
 	int	index_b;
-	int	len;
 	int	resize;
 
 	arr = ft_copytoarray((*a));
 	range = 0;
-	len = stacklen(*a);
 	resize = 30;
 	while (range < len)
 	{
@@ -94,40 +92,43 @@ void	sortwithindex(t_node **a, t_node **b)
 			pb(a, b);
 			range++;
 		}
-		else
-			ra(a);
+		ra(a);
 	}
 	free(arr);
 }
 
-void sortinthestacka(t_node **a , t_node**b)
+void	sortinthestacka(t_node **a, t_node **b)
 {
-    int len = stacklen((*b));
-    int i = 0;
-    int nasso;
-    int index_b;
-    nasso = len / 2;
-    while(i < len)
-    {
-        int n = max(*b);
-        index_b = getindexofmax(*b, n);
-        if(index_b <= nasso)
-        {
-            while(index_b != 0)
-            {
-                rb(b);
-                index_b--;
-            }    
-        }
-        else if(index_b > nasso)
-        {
-            while(index_b != len)
-            {
-                rrb(b);
-                index_b++;
-            }
-        }
-        pa(a, b);
-        len--;
-    }
+	int	len;
+	int	i;
+	int	nasso;
+	int	index_b;
+	int	n;
+
+	len = stacklen((*b));
+	i = 0;
+	nasso = len / 2;
+	while (i < len)
+	{
+		n = max(*b);
+		index_b = getindexofmax(*b, n);
+		if (index_b <= nasso)
+		{
+			while (index_b != 0)
+			{
+				rb(b);
+				index_b--;
+			}
+		}
+		else if (index_b > nasso)
+		{
+			while (index_b != len)
+			{
+				rrb(b);
+				index_b++;
+			}
+		}
+		pa(a, b);
+		len--;
+	}
 }

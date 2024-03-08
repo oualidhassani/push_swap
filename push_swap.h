@@ -55,14 +55,14 @@ void			fivefunction(t_node **a, t_node *b);
 int				*ft_copytoarray(t_node *head);
 void			sortingarray(int *arr, int size);
 void			spaceerror(int ac, char **av);
-void			sortwithindex(t_node **a, t_node **b);
+void			sortwithindex(t_node **a, t_node **b, int len);
 void			rb(t_node **topb);
 void			rrb(t_node **topb);
 int				max(t_node *b);
 int				getindexofmax(t_node *b, int max);
 void			errorhandling(int ac, char **av);
-void 			sortinthestacka(t_node **a , t_node **b);
+void			sortinthestacka(t_node **a, t_node **b);
 void			ft_freelist(t_node *b);
-void			callingfunction(t_node *a, t_node *b);
+void			callingfunction(t_node **a, t_node **b, int len);
 void			freeallthealloaction(char **str, t_node *stack, char *str1);
 #endif

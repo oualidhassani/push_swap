@@ -12,20 +12,20 @@
 
 #include "push_swap.h"
 
-void	callingfunction(t_node *a, t_node *b)
+void	callingfunction(t_node **a, t_node **b, int len)
 {
-	if (stacklen(a) == 3)
-		sortthreenum(&a);
-	else if (stacklen(a) == 2)
-		sa(&a);
-	else if (stacklen(a) == 4)
-		fourthnum(&a, b);
-	else if (stacklen(a) == 5)
-		fivefunction(&a, b);
-	else if (stacklen(a) > 5)
+	if (len == 3)
+		sortthreenum(a);
+	else if (len == 2)
+		sa(a);
+	else if (len == 4)
+		fourthnum(a, (*b));
+	else if (len == 5)
+		fivefunction(a, (*b));
+	else if (stacklen((*a)) > 5)
 	{
-		sortwithindex(&a, &b);
-		sortinthestacka(&a, &b);
+		sortwithindex(a, b, len);
+		sortinthestacka(a, b);
 	}
 }
 
