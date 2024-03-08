@@ -39,7 +39,7 @@ void			ft_free(char **str);
 t_node			*createnode(int a);
 void			push(t_node **top, int data);
 void			printstack(t_node *top);
-void			splitingarguments(int ac, char **av, t_node **top);
+void			splitingarguments(int ac, char **av, t_node **top, int i);
 void			ft_errors(int ac, char **av);
 void			displayerrors(void);
 int				check_spase(char *str);

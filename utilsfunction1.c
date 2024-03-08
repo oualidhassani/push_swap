@@ -58,3 +58,16 @@ void	fivenumsort(t_node **a, t_node *b)
 	fourthnum(a, b);
 	pa(a, &b);
 }
+
+void	ft_free(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+}
