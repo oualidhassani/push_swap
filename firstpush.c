@@ -44,21 +44,21 @@ void	push(t_node **top, int data)
 	tmp->next = newnode;
 }
 
-void	check(long element, t_node **top, char **tok, char *itoaresult)
+void	check(long element, t_node **top, char **tok, int j)
 {
-	int	j;
+	char	*itoaresult;
 
-	j = 0;
+	itoaresult = ft_itoa(element);
 	if (element > 2147483647 || checkduplicate(*top, ft_atoi(tok[j])) == 1
 		|| !ft_is_string_digit(tok[j]) || ft_strcmp(tok[j], itoaresult) != 0)
 		freeallthealloaction(tok, (*top), itoaresult);
+	free(itoaresult);
 }
 
 void	splitingarguments(int ac, char **av, t_node **top, int i)
 {
 	char	**tok;
 	char	*arg;
-	char	*itoaresult;
 	long	element;
 	int		j;
 
@@ -66,16 +66,14 @@ void	splitingarguments(int ac, char **av, t_node **top, int i)
 	{
 		arg = av[i++];
 		tok = ft_split(arg, ' ');
+		j = 0;
 		if (tok != NULL)
 		{
-			j = 0;
 			while (tok[j] != NULL)
 			{
 				element = ft_atoi(tok[j]);
-				itoaresult = ft_itoa(element);
-				check(element, top, tok, itoaresult);
+				check(element, top, tok, j);
 				push(top, element);
-				free(itoaresult);
 				j++;
 			}
 		}
