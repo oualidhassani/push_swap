@@ -102,6 +102,7 @@ int	main(int ac, char **av)
 		exit(0);
 	}
 	else
-		callingfunction(&a, &b, len) ft_freelist(a);
+		callingfunction(&a, &b, len);
+	ft_freelist(a);
 	ft_freelist(b);
 }
