@@ -88,7 +88,7 @@ int	main(int ac, char **av)
 	int		len;
 
 	if (ac < 2)
-		exit(1);
+		exit(0);
 	a = NULL;
 	b = NULL;
 	errorhandling(ac, av);
