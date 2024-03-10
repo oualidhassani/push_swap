@@ -2,7 +2,7 @@ NAME = push_swap
 BONUS = checker
 
 SRCS = sort.c firstpush.c setup_rules.c utilsfunction.c parsing.c algo.c errors.c utilsfunction1.c setuprules1.c main.c
-CHECKER_SRCS = checker_bonus.c get_next_line.c
+CHECKER_SRCS = checker_bonus.c get_next_line.c get_next_line_utils.c
 
 OBJ = $(SRCS:.c=.o)
 CHECKER_OBJ = $(CHECKER_SRCS:.c=.o)
