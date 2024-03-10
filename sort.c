@@ -73,11 +73,11 @@ void	sortwithindex(t_node **a, t_node **b, int len)
 	int	*arr;
 	int	range;
 	int	index_b;
-	int	resize;
+	float	resize;
 
 	arr = ft_copytoarray((*a));
 	range = 0;
-	resize = 30;
+	resize = 15;
 	while (range < len)
 	{
 		index_b = asignindices((*a)->val, arr, len);
@@ -92,7 +92,38 @@ void	sortwithindex(t_node **a, t_node **b, int len)
 			pb(a, b);
 			range++;
 		}
-		ra(a);
+		else
+			ra(a);
+	}
+	free(arr);
+}
+
+void	sortwithindex500(t_node **a, t_node **b, int len)
+{
+	int	*arr;
+	int	range;
+	int	index_b;
+	int	resize;
+
+	arr = ft_copytoarray((*a));
+	range = 0;
+	resize = 35;
+	while (range < len)
+	{
+		index_b = asignindices((*a)->val, arr, len);
+		if (index_b < range)
+		{
+			pb(a, b);
+			rb(b);
+			range++;
+		}
+		else if (index_b <= resize + range)
+		{
+			pb(a, b);
+			range++;
+		}
+		else
+			ra(a);
 	}
 	free(arr);
 }
@@ -105,9 +136,9 @@ void	sortinthestacka(t_node **a, t_node **b)
 	int	n;
 
 	len = stacklen((*b));
-	nasso = len / 2;
-	while (0 < len)
+	while (len > 0)
 	{
+		nasso = len / 2;
 		n = max(*b);
 		index_b = getindexofmax(*b, n);
 		if (index_b <= nasso)
@@ -120,7 +151,8 @@ void	sortinthestacka(t_node **a, t_node **b)
 			while (index_b++ != len)
 				rrb(b);
 		}
-		pa(a, b);
+		else
+			pa(a, b);
 		len--;
 	}
 }

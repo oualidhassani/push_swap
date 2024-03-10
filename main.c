@@ -22,9 +22,14 @@ void	callingfunction(t_node **a, t_node **b, int len)
 		fourthnum(a, (*b));
 	else if (len == 5)
 		fivefunction(a, (*b));
-	else if (stacklen((*a)) > 5)
+	else if (stacklen((*a)) > 5 && stacklen((*a)) <= 100)
 	{
 		sortwithindex(a, b, len);
+		sortinthestacka(a, b);
+	}
+	else if(stacklen((*a)) > 100)
+	{
+		sortwithindex500(a, b, len);
 		sortinthestacka(a, b);
 	}
 }

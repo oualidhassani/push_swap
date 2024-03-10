@@ -59,6 +59,7 @@ void			sortwithindex(t_node **a, t_node **b, int len);
 void			rb(t_node **topb);
 void			rrb(t_node **topb);
 int				max(t_node *b);
+void			sortwithindex500(t_node **a, t_node **b, int len);
 int				getindexofmax(t_node *b, int max);
 void			errorhandling(int ac, char **av);
 void			sortinthestacka(t_node **a, t_node **b);
