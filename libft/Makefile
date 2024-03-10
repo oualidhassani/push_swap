@@ -5,9 +5,7 @@ SRCS = \
 	 ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c ft_strdup.c ft_striteri.c\
 	 ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strcmp.c ft_strnstr.c\
 	 ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c ft_memcpy.c ft_putstr_fd2.c\
-	 ft_putchar_fd2.c ft_putnbr_fd2.c ft_printfx.c ft_printadres.c ft_printf.c ft_printfu.c ft_is_string_digit.c\
-	 get_next_line.c get_next_line_bonus.c get_next_line_utils.c get_next_line_utils_bonus.c
-
+	 ft_putchar_fd2.c ft_putnbr_fd2.c ft_printfx.c ft_printadres.c ft_printf.c ft_printfu.c ft_is_string_digit.c
 
 OBJ = $(SRCS:.c=.o)
 

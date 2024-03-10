@@ -6,7 +6,7 @@
 /*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 18:08:30 by ohassani          #+#    #+#             */
-/*   Updated: 2024/03/07 15:18:27 by ohassani         ###   ########.fr       */
+/*   Updated: 2024/03/10 12:13:50 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ int		ft_printfx(unsigned long n, char *hexa);
 int		ft_printadres(unsigned long n);
 int		ft_printf(const char *s, ...);
 int		ft_printfu(unsigned int i);
-char	*get_next_line(int fd);
 size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s);
@@ -75,7 +74,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*mybuffer(int fd, char *accumulation, char *buffer);
 char	*linesub(char *line_buffer);
-char	*get_next_line_bonus(int fd);
 size_t	ft_strlen1(const char *s);
 char	*ft_strchr1(const char *s, int c);
 char	*ft_strdup1(const char *s);
