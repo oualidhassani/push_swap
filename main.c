@@ -24,12 +24,12 @@ void	callingfunction(t_node **a, t_node **b, int len)
 		fivefunction(a, (*b));
 	else if (stacklen((*a)) > 5 && stacklen((*a)) <= 100)
 	{
-		sortwithindex(a, b, len);
+		sortwithindex(a, b, len, 0);
 		sortinthestacka(a, b);
 	}
 	else if (stacklen((*a)) > 100)
 	{
-		sortwithindex500(a, b, len);
+		sortwithindex500(a, b, len, 0);
 		sortinthestacka(a, b);
 	}
 }

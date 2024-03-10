@@ -68,15 +68,13 @@ void	fivefunction(t_node **a, t_node *b)
 	fivenumsort(a, b);
 }
 
-void	sortwithindex(t_node **a, t_node **b, int len)
+void	sortwithindex(t_node **a, t_node **b, int len, int range)
 {
-	int		*arr;
-	int		range;
-	int		index_b;
-	float	resize;
+	int	*arr;
+	int	index_b;
+	int	resize;
 
 	arr = ft_copytoarray((*a));
-	range = 0;
 	resize = 15;
 	while (range < len)
 	{
@@ -92,21 +90,20 @@ void	sortwithindex(t_node **a, t_node **b, int len)
 			pb(a, b);
 			range++;
 		}
-		ra(a);
+		else
+			ra(a);
 	}
 	free(arr);
 }
 
-void	sortwithindex500(t_node **a, t_node **b, int len)
+void	sortwithindex500(t_node **a, t_node **b, int len, int range)
 {
 	int	*arr;
-	int	range;
 	int	index_b;
 	int	resize;
 
 	arr = ft_copytoarray((*a));
-	range = 0;
-	resize = 35;
+	resize = 30;
 	while (range < len)
 	{
 		index_b = asignindices((*a)->val, arr, len);
@@ -121,7 +118,8 @@ void	sortwithindex500(t_node **a, t_node **b, int len)
 			pb(a, b);
 			range++;
 		}
-		ra(a);
+		else
+			ra(a);
 	}
 	free(arr);
 }
