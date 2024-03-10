@@ -69,6 +69,7 @@ int	*ft_copytoarray(t_node *head)
 	if (array == NULL)
 	{
 		ft_putstr_fd2("Error", 0);
+		free(array);
 		exit(1);
 	}
 	while (i < counter)

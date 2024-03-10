@@ -14,7 +14,7 @@
 
 void	displayerrors(void)
 {
-	ft_putstr_fd("Error\n", 0);
+	ft_putstr_fd("Error\n", 2);
 	exit(1);
 }
 

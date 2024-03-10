@@ -66,4 +66,5 @@ void			sortinthestacka(t_node **a, t_node **b);
 void			ft_freelist(t_node *b);
 void			callingfunction(t_node **a, t_node **b, int len);
 void			freeallthealloaction(char **str, t_node *stack, char *str1);
+void			ss(t_node **top, t_node **topb);
 #endif
