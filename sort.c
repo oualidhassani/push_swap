@@ -70,9 +70,9 @@ void	fivefunction(t_node **a, t_node *b)
 
 void	sortwithindex(t_node **a, t_node **b, int len)
 {
-	int	*arr;
-	int	range;
-	int	index_b;
+	int		*arr;
+	int		range;
+	int		index_b;
 	float	resize;
 
 	arr = ft_copytoarray((*a));
@@ -92,8 +92,7 @@ void	sortwithindex(t_node **a, t_node **b, int len)
 			pb(a, b);
 			range++;
 		}
-		else
-			ra(a);
+		ra(a);
 	}
 	free(arr);
 }
@@ -122,8 +121,7 @@ void	sortwithindex500(t_node **a, t_node **b, int len)
 			pb(a, b);
 			range++;
 		}
-		else
-			ra(a);
+		ra(a);
 	}
 	free(arr);
 }
@@ -151,8 +149,7 @@ void	sortinthestacka(t_node **a, t_node **b)
 			while (index_b++ != len)
 				rrb(b);
 		}
-		else
-			pa(a, b);
+		pa(a, b);
 		len--;
 	}
 }

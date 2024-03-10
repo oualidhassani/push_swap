@@ -27,7 +27,7 @@ void	callingfunction(t_node **a, t_node **b, int len)
 		sortwithindex(a, b, len);
 		sortinthestacka(a, b);
 	}
-	else if(stacklen((*a)) > 100)
+	else if (stacklen((*a)) > 100)
 	{
 		sortwithindex500(a, b, len);
 		sortinthestacka(a, b);
