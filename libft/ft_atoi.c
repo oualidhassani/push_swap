@@ -13,7 +13,7 @@
 #include "libft.h"
 
 long	ft_atoi(char *str)
-{
+{   
 	int	i;
 	int	res;
 	int	sign;
@@ -38,10 +38,3 @@ long	ft_atoi(char *str)
 	}
 	return (res * sign);
 }
-
-// int main ()
-// {
-//     char d[] ="+123";
-//     printf("%d\n", atoi(d));
-//     printf("%d", ft_atoi(d));
-// }

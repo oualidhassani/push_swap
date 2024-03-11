@@ -26,12 +26,9 @@ int removedbeg(t_node **head)
 void checker(t_node **a, t_node **b)
 {
     char *str;
-
     str = get_next_line(0);
     while (str)
     {
-        /* code */
-
         if (ft_strncmp(str, "sa\n", 3))
             sa(a);
         else if (ft_strncmp(str, "sb\n", 3))
@@ -96,7 +93,7 @@ int main(int ac, char **av)
     errorhandling(ac, av);
     splitingarguments(ac, &a, av, 1);
     checker(&a,&b);
-    if(mystackissorted(a) && stacklen(b) == 0)
+    if(mystackissorted(a) == 1)
             write(1, "ok\n", 3);
     else
             write(1, "ko\n", 3);
