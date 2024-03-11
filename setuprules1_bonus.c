@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   setuprules1_bonus.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/11 19:28:37 by ohassani          #+#    #+#             */
+/*   Updated: 2024/03/11 20:25:40 by ohassani         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "checker_bonus.h"
 
 void	rrr(t_node **top, t_node **topb)
@@ -57,9 +69,4 @@ void	rra(t_node **top)
 	newone = createnode(value);
 	newone->next = *top;
 	*top = newone;
-}
-void ss(t_node **top, t_node **topb)
-{
-	sa(top);
-	sb(topb);
 }

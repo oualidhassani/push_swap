@@ -1,10 +1,16 @@
-#include "checker_bonus.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker_utils1.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/11 19:27:55 by ohassani          #+#    #+#             */
+/*   Updated: 2024/03/11 20:23:03 by ohassani         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	errorhandling(int ac, char **av)
-{
-	spaceerror(ac, av);
-	ft_errors(ac, av);
-}
+#include "checker_bonus.h"
 
 t_node	*createnode(int a)
 {
@@ -20,6 +26,7 @@ t_node	*createnode(int a)
 	node->next = NULL;
 	return (node);
 }
+
 void	push(t_node **top, int data)
 {
 	t_node	*newnode;
@@ -84,11 +91,4 @@ void	check(long element, t_node **top, char **tok, int j)
 		|| !ft_is_string_digit(tok[j]) || ft_strcmp(tok[j], itoaresult) != 0)
 		freeallthealloaction(tok, (*top), itoaresult);
 	free(itoaresult);
-}
-void	freeallthealloaction(char **str , t_node *top, char *str1)
-{
-	ft_free(str);
-	free(str1);
-	ft_freelist(top);
-	displayerrors();
 }

@@ -82,5 +82,5 @@ char	*ft_strjoin1(char const *s1, char const *s2);
 char	*mybuffer1(int fd, char *accumulation, char *buffer);
 char	*linesub1(char *line_buffer);
 void	displayerrors(void);
-int     ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 #endif
