@@ -9,7 +9,6 @@ void	sa(t_node **top)
 	tmp = (*top)->val;
 	(*top)->val = (*top)->next->val;
 	(*top)->next->val = tmp;
-	write(1, "sa\n", 3);
 }
 
 void	sb(t_node **topb)
@@ -21,7 +20,6 @@ void	sb(t_node **topb)
 	tmpb = (*topb)->val;
 	(*topb)->val = (*topb)->next->val;
 	(*topb)->next->val = tmpb;
-	write(1, "sb\n", 3);
 }
 
 void	pa(t_node **top, t_node **topb)
@@ -38,7 +36,6 @@ void	pa(t_node **top, t_node **topb)
 		topnow->next = *top;
 		*top = topnow;
 	}
-	write(1, "pa\n", 3);
 }
 
 void	pb(t_node **top, t_node **topb)
@@ -55,7 +52,6 @@ void	pb(t_node **top, t_node **topb)
 		topnnow->next = *topb;
 		*topb = topnnow;
 	}
-	write(1, "pb\n", 3);
 }
 
 void	rrb(t_node **topb)
@@ -75,5 +71,4 @@ void	rrb(t_node **topb)
 	newone = createnode(value);
 	newone->next = *topb;
 	*topb = newone;
-	write(1, "rrb\n", 4);
 }

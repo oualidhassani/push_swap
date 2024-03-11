@@ -60,4 +60,5 @@ void	rb(t_node **topb);
 void	rra(t_node **top);
 void 	ss(t_node **top, t_node **topb);
 int	removedbeg(t_node **head);
+void	ft_freelist(t_node *stack);
 #endif
