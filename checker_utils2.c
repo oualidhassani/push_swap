@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_utis2.c                                    :+:      :+:    :+:   */
+/*   checker_utils2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 20:23:48 by ohassani          #+#    #+#             */
-/*   Updated: 2024/03/11 20:26:04 by ohassani         ###   ########.fr       */
+/*   Updated: 2024/03/12 03:48:50 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-void	freeallthealloaction(char **str, t_node *top, char *str1)
+void	freeallthealloaction(char **str, t_node *top)
 {
 	ft_free(str);
-	free(str1);
 	ft_freelist(top);
 	displayerrors();
 }

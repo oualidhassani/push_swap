@@ -6,7 +6,7 @@
 /*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:48:11 by ohassani          #+#    #+#             */
-/*   Updated: 2024/03/11 20:43:02 by ohassani         ###   ########.fr       */
+/*   Updated: 2024/03/12 03:49:12 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int				checkduplicate(t_node *a, int nbr);
 void			spaceerror(int ac, char **av);
 void			check(long element, t_node **top, char **tok, int j);
 void			splitingarguments(int ac, t_node **top, char **av, int i);
-void			freeallthealloaction(char **str, t_node *top, char *str1);
+void			freeallthealloaction(char **str, t_node *top);
 t_node			*createnode(int a);
 void			sa(t_node **top);
 void			sb(t_node **topb);

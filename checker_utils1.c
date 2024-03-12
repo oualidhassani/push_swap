@@ -6,7 +6,7 @@
 /*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 19:27:55 by ohassani          #+#    #+#             */
-/*   Updated: 2024/03/11 20:23:03 by ohassani         ###   ########.fr       */
+/*   Updated: 2024/03/12 03:48:39 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,11 +84,7 @@ void	ft_freelist(t_node *stack)
 
 void	check(long element, t_node **top, char **tok, int j)
 {
-	char	*itoaresult;
-
-	itoaresult = ft_itoa(element);
 	if (element > 2147483647 || checkduplicate(*top, ft_atoi(tok[j])) == 1
-		|| !ft_is_string_digit(tok[j]) || ft_strcmp(tok[j], itoaresult) != 0)
-		freeallthealloaction(tok, (*top), itoaresult);
-	free(itoaresult);
+		|| !ft_is_string_digit(tok[j]))
+		freeallthealloaction(tok, (*top));
 }
