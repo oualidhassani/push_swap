@@ -6,7 +6,7 @@
 /*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:37:53 by ohassani          #+#    #+#             */
-/*   Updated: 2024/03/08 13:07:22 by ohassani         ###   ########.fr       */
+/*   Updated: 2024/03/12 03:39:37 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,9 @@ void	push(t_node **top, int data)
 
 void	check(long element, t_node **top, char **tok, int j)
 {
-	char	*itoaresult;
-
-	itoaresult = ft_itoa(element);
 	if (element > 2147483647 || checkduplicate(*top, ft_atoi(tok[j])) == 1
-		|| !ft_is_string_digit(tok[j]) || ft_strcmp(tok[j], itoaresult) != 0)
-		freeallthealloaction(tok, (*top), itoaresult);
-	free(itoaresult);
+		|| !ft_is_string_digit(tok[j]))
+		freeallthealloaction(tok, (*top));
 }
 
 void	splitingarguments(int ac, char **av, t_node **top, int i)
@@ -101,6 +97,11 @@ int	main(int ac, char **av)
 	}
 	else
 		callingfunction(&a, &b, len);
+	while (a)
+	{
+		ft_printf("%d\n", a->val);
+		a = a->next;
+	}
 	ft_freelist(a);
 	ft_freelist(b);
 }

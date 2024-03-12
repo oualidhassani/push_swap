@@ -6,7 +6,7 @@
 /*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 19:29:44 by ohassani          #+#    #+#             */
-/*   Updated: 2024/03/08 13:06:52 by ohassani         ###   ########.fr       */
+/*   Updated: 2024/03/12 03:39:52 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,9 @@ void	callingfunction(t_node **a, t_node **b, int len)
 	}
 }
 
-void	freeallthealloaction(char **str, t_node *stack, char *str1)
+void	freeallthealloaction(char **str, t_node *stack)
 {
 	ft_free(str);
 	ft_freelist((stack));
-	free(str1);
 	displayerrors();
 }

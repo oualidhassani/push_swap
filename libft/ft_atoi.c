@@ -6,7 +6,7 @@
 /*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 11:35:02 by ohassani          #+#    #+#             */
-/*   Updated: 2024/03/07 15:18:12 by ohassani         ###   ########.fr       */
+/*   Updated: 2024/03/12 03:38:10 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 long	ft_atoi(char *str)
 {
-	int	i;
-	int	res;
-	int	sign;
+	int		i;
+	long	res;
+	int		sign;
 
 	i = 0;
 	res = 0;
@@ -35,6 +35,8 @@ long	ft_atoi(char *str)
 	{
 		res = (res * 10) + str[i] - 48;
 		i++;
+		if (res * sign > 2147483647 || res * sign < -2147483648)
+			displayerrors();
 	}
 	return (res * sign);
 }

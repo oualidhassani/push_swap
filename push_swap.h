@@ -6,7 +6,7 @@
 /*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:57:49 by ohassani          #+#    #+#             */
-/*   Updated: 2024/03/08 13:07:14 by ohassani         ###   ########.fr       */
+/*   Updated: 2024/03/12 03:40:10 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,6 @@ void			errorhandling(int ac, char **av);
 void			sortinthestacka(t_node **a, t_node **b);
 void			ft_freelist(t_node *b);
 void			callingfunction(t_node **a, t_node **b, int len);
-void			freeallthealloaction(char **str, t_node *stack, char *str1);
+void			freeallthealloaction(char **str, t_node *stack);
 void			ss(t_node **top, t_node **topb);
 #endif
