@@ -6,7 +6,7 @@
 /*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 19:52:13 by ohassani          #+#    #+#             */
-/*   Updated: 2024/03/11 20:46:12 by ohassani         ###   ########.fr       */
+/*   Updated: 2024/03/12 00:47:57 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,11 +88,11 @@ int	main(int ac, char **av)
 
 	a = NULL;
 	b = NULL;
-	str = get_next_line(0);
 	if (ac < 2)
 		exit(1);
 	errorhandling(ac, av);
 	splitingarguments(ac, &a, av, 1);
+	str = get_next_line(0);
 	while (str)
 	{
 		checker(str, &a, &b);
