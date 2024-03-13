@@ -6,7 +6,7 @@
 /*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 19:52:13 by ohassani          #+#    #+#             */
-/*   Updated: 2024/03/12 00:47:57 by ohassani         ###   ########.fr       */
+/*   Updated: 2024/03/13 00:42:49 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,4 +103,6 @@ int	main(int ac, char **av)
 		ft_putstr_fd("OK\n", 1);
 	else
 		ft_putstr_fd("KO\n", 1);
+	ft_freelist(a);
+	ft_freelist(b);
 }
