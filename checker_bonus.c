@@ -6,7 +6,11 @@
 /*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 19:52:13 by ohassani          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/03/13 00:42:49 by ohassani         ###   ########.fr       */
+=======
+/*   Updated: 2024/03/13 02:13:49 by ohassani         ###   ########.fr       */
+>>>>>>> c3b56f7 (still one byte not found in memory leaks)
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +53,10 @@ void	checker(char *str, t_node **a, t_node **b)
 	else if (!ft_strncmp(str, "rrr\n", 4))
 		rrr(a, b);
 	else
+	{
+		ft_freelist((*a));
 		displayerrors();
+	}
 }
 
 int	mystackissorted(t_node *stack)

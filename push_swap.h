@@ -6,7 +6,11 @@
 /*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:57:49 by ohassani          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/03/12 03:40:10 by ohassani         ###   ########.fr       */
+=======
+/*   Updated: 2024/03/13 01:47:43 by ohassani         ###   ########.fr       */
+>>>>>>> c3b56f7 (still one byte not found in memory leaks)
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +39,7 @@ void			ra(t_node **top);
 void			rra(t_node **top);
 void			printstack(t_node *pop);
 int				removedbeg(t_node **head);
-void			ft_free(char **str);
+void			ft_free1(char **str);
 t_node			*createnode(int a);
 void			push(t_node **top, int data);
 void			printstack(t_node *top);

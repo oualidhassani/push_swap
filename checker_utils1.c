@@ -6,7 +6,11 @@
 /*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 19:27:55 by ohassani          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/03/12 03:48:39 by ohassani         ###   ########.fr       */
+=======
+/*   Updated: 2024/03/13 02:00:43 by ohassani         ###   ########.fr       */
+>>>>>>> c3b56f7 (still one byte not found in memory leaks)
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +28,7 @@ t_node	*createnode(int a)
 	}
 	node->val = a;
 	node->next = NULL;
+	node->index = 0;
 	return (node);
 }
 
@@ -66,7 +71,7 @@ void	splitingarguments(int ac, t_node **top, char **av, int i)
 				j++;
 			}
 		}
-		ft_free(tok);
+		ft_free1(tok);
 	}
 }
 
