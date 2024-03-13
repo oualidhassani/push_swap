@@ -6,7 +6,11 @@
 /*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:48:11 by ohassani          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/03/12 03:49:12 by ohassani         ###   ########.fr       */
+=======
+/*   Updated: 2024/03/13 02:31:40 by ohassani         ###   ########.fr       */
+>>>>>>> c3b56f7 (still one byte not found in memory leaks)
 /*                                                                            */
 /* ************************************************************************** */
 

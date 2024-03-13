@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utilsfunction1.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohassani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:52:24 by ohassani          #+#    #+#             */
-/*   Updated: 2024/03/07 18:52:26 by ohassani         ###   ########.fr       */
+/*   Updated: 2024/03/13 01:21:43 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	fivenumsort(t_node **a, t_node *b)
 	pa(a, &b);
 }
 
-void	ft_free(char **str)
+void	ft_free1(char **str)
 {
 	int	i;
 

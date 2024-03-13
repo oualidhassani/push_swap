@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohassani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:46:40 by ohassani          #+#    #+#             */
-/*   Updated: 2024/03/10 14:46:42 by ohassani         ###   ########.fr       */
+/*   Updated: 2024/03/13 02:39:21 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ char	*get_next_line(int fd)
 {
 	char		*line;
 	char		*buffer;
-	static char	*accumulation;
+	char	*accumulation;
 
 	buffer = NULL;
+	accumulation = NULL;
 	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE >= 2147483647)
 		return (NULL);
 	buffer = (char *)malloc(BUFFER_SIZE + 1);
@@ -39,7 +40,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	}
 	accumulation = linesub(line);
-	return (line);
+	return (free(accumulation), line);
 }
 
 char	*mybuffer(int fd, char *accumulation, char *buffer)
