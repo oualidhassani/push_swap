@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utilsfunction.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohassani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:50:46 by ohassani          #+#    #+#             */
-/*   Updated: 2024/03/07 18:50:49 by ohassani         ###   ########.fr       */
+/*   Updated: 2024/03/13 16:06:01 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	*ft_copytoarray(t_node *head)
 	i = 0;
 	if (array == NULL)
 	{
-		ft_putstr_fd2("Error", 0);
+		ft_putstr_fd2("Error", 2);
 		free(array);
 		exit(1);
 	}

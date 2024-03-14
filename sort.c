@@ -6,7 +6,7 @@
 /*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:49:59 by ohassani          #+#    #+#             */
-/*   Updated: 2024/03/13 01:48:33 by ohassani         ###   ########.fr       */
+/*   Updated: 2024/03/14 01:09:37 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,58 +14,40 @@
 
 void	fourthnum(t_node **a, t_node *b)
 {
-	t_node	*smallest_node;
-	t_node	*head;
+	int	len;
 
-	smallest_node = findsmallest(*a);
-	head = *a;
-	if (head == smallest_node)
+	len = stacklen((*a));
+	while (len > 0)
 	{
-		head = head->next;
-		fourthnumsort(a, b);
-	}
-	else
-	{
-		if (smallest_node->index < stacklen(head) / 2)
+		if ((*a)->val == min((*a)))
 		{
-			while (smallest_node->val != (*a)->val)
-				ra(a);
+			pb(a, &b);
+			break ;
 		}
-		else
-		{
-			while (smallest_node->val != (*a)->val)
-				rra(a);
-		}
+		rra(a);
+		len--;
 	}
-	fourthnumsort(a, b);
+	sortthreenum(a);
+	pa(a, &b);
 }
 
 void	fivefunction(t_node **a, t_node *b)
 {
-	t_node	*smallest_node;
-	t_node	*head;
+	int	len;
 
-	smallest_node = findsmallest(*a);
-	head = *a;
-	if (head == smallest_node)
+	len = stacklen((*a));
+	while (len > 0)
 	{
-		head = head->next;
-		fivenumsort(a, b);
-	}
-	else
-	{
-		if (smallest_node->index < stacklen(head) / 2)
+		if ((*a)->val == min((*a)))
 		{
-			while (smallest_node->val != (*a)->val)
-				ra(a);
+			pb(a, &b);
+			break ;
 		}
-		else
-		{
-			while (smallest_node->val != (*a)->val)
-				rra(a);
-		}
+		rra(a);
+		len--;
 	}
-	fivenumsort(a, b);
+	fourthnum(a, b);
+	pa(a, &b);
 }
 
 void	sortwithindex(t_node **a, t_node **b, int len, int range)
@@ -103,7 +85,7 @@ void	sortwithindex500(t_node **a, t_node **b, int len, int range)
 	int	resize;
 
 	arr = ft_copytoarray((*a));
-	resize = 30;
+	resize = 35;
 	while (range < len)
 	{
 		index_b = asignindices((*a)->val, arr, len);

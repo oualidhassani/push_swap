@@ -6,11 +6,7 @@
 /*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:37:53 by ohassani          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2024/03/12 03:39:37 by ohassani         ###   ########.fr       */
-=======
-/*   Updated: 2024/03/13 01:53:11 by ohassani         ###   ########.fr       */
->>>>>>> c3b56f7 (still one byte not found in memory leaks)
+/*   Updated: 2024/03/14 14:59:01 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +19,7 @@ t_node	*createnode(int a)
 	node = (t_node *)malloc(sizeof(t_node));
 	if (node == NULL)
 	{
-		ft_putstr_fd2("Error\n", 0);
+		ft_putstr_fd2("Error\n", 2);
 		exit(1);
 	}
 	node->val = a;
@@ -102,11 +98,6 @@ int	main(int ac, char **av)
 	}
 	else
 		callingfunction(&a, &b, len);
-	while (a)
-	{
-		ft_printf("%d\n", a->val);
-		a = a->next;
-	}
 	ft_freelist(a);
 	ft_freelist(b);
 }

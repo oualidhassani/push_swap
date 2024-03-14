@@ -6,7 +6,7 @@
 /*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:52:24 by ohassani          #+#    #+#             */
-/*   Updated: 2024/03/13 01:21:43 by ohassani         ###   ########.fr       */
+/*   Updated: 2024/03/14 01:12:34 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,22 @@ int	max(t_node *b)
 	return (maxnum);
 }
 
+int	min(t_node *b)
+{
+	t_node	*current;
+	int		min;
+
+	current = b;
+	min = current->val;
+	while (current != NULL)
+	{
+		if (min > current->val)
+			min = current->val;
+		current = current->next;
+	}
+	return (min);
+}
+
 int	getindexofmax(t_node *b, int max)
 {
 	int		i;
@@ -43,20 +59,6 @@ int	getindexofmax(t_node *b, int max)
 		i++;
 	}
 	return (-1);
-}
-
-void	fourthnumsort(t_node **a, t_node *b)
-{
-	pb(a, &b);
-	sortthreenum((a));
-	pa(a, &b);
-}
-
-void	fivenumsort(t_node **a, t_node *b)
-{
-	pb(a, &b);
-	fourthnum(a, b);
-	pa(a, &b);
 }
 
 void	ft_free1(char **str)

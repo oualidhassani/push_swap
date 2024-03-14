@@ -6,11 +6,7 @@
 /*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 20:23:48 by ohassani          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2024/03/12 03:48:50 by ohassani         ###   ########.fr       */
-=======
-/*   Updated: 2024/03/13 01:24:46 by ohassani         ###   ########.fr       */
->>>>>>> c3b56f7 (still one byte not found in memory leaks)
+/*   Updated: 2024/03/13 15:16:53 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +14,7 @@
 
 void	freeallthealloaction(char **str, t_node *top)
 {
-	ft_free(str);
+	ft_free1(str);
 	ft_freelist(top);
 	displayerrors();
 }
@@ -46,4 +42,12 @@ void	ft_free1(char **str)
 		i++;
 	}
 	free(str);
+}
+
+void	errorforchecker(char *str, t_node **a, t_node **b)
+{
+	free(str);
+	ft_freelist((*a));
+	ft_freelist((*b));
+	displayerrors();
 }

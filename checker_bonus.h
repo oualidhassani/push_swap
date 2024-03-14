@@ -6,11 +6,7 @@
 /*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:48:11 by ohassani          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2024/03/12 03:49:12 by ohassani         ###   ########.fr       */
-=======
-/*   Updated: 2024/03/13 02:31:40 by ohassani         ###   ########.fr       */
->>>>>>> c3b56f7 (still one byte not found in memory leaks)
+/*   Updated: 2024/03/13 15:15:49 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +29,7 @@ typedef struct node
 	struct node	*next;
 }				t_node;
 
+void			ft_free1(char **str);
 size_t			ft_strlen(const char *s);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strdup(const char *s);
@@ -66,4 +63,5 @@ void			ss(t_node **top, t_node **topb);
 int				removedbeg(t_node **head);
 void			ft_freelist(t_node *stack);
 void			ss(t_node **top, t_node **topb);
+void			errorforchecker(char *str, t_node **a, t_node **b);
 #endif

@@ -10,7 +10,7 @@ CHECKER_OBJ = $(CHECKER_SRCS:.c=.o)
 
 AR = ar rcs
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -g3 #-fsanitize=address
+CFLAGS = -Wall -Werror -Wextra
 RM = rm -f
 LIBFT = libft/libft.a
 all: $(NAME)

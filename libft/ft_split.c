@@ -6,7 +6,7 @@
 /*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 14:51:20 by ohassani          #+#    #+#             */
-/*   Updated: 2024/03/13 01:26:54 by ohassani         ###   ########.fr       */
+/*   Updated: 2024/03/13 15:13:29 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	**ft_free2(char **fr)
 	free (fr);
 	return (0);
 }
+
 static char	*small_alloc(char const *str, int *index, char separator)
 {
 	char	*ptr;

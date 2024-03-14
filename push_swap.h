@@ -6,11 +6,7 @@
 /*   By: ohassani <ohassani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:57:49 by ohassani          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2024/03/12 03:40:10 by ohassani         ###   ########.fr       */
-=======
-/*   Updated: 2024/03/13 01:47:43 by ohassani         ###   ########.fr       */
->>>>>>> c3b56f7 (still one byte not found in memory leaks)
+/*   Updated: 2024/03/14 01:11:10 by ohassani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +24,7 @@ typedef struct node
 	struct node	*next;
 }				t_node;
 
-void			fivenumsort(t_node **a, t_node *b);
-void			fourthnumsort(t_node **a, t_node *b);
+int				min(t_node *b);
 void			sa(t_node **top);
 void			sb(t_node **topb);
 void			ss(t_node **top, t_node **topb);

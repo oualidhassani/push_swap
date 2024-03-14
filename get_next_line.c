@@ -21,8 +21,8 @@ void	ft_free(char **buffer)
 
 char	*get_next_line(int fd)
 {
-	char		*line;
-	char		*buffer;
+	char	*line;
+	char	*buffer;
 	char	*accumulation;
 
 	buffer = NULL;
@@ -36,7 +36,7 @@ char	*get_next_line(int fd)
 	if (line == NULL || line[0] == '\0')
 	{
 		if (accumulation != NULL)
-			ft_free (&accumulation);
+			ft_free(&accumulation);
 		return (NULL);
 	}
 	accumulation = linesub(line);
